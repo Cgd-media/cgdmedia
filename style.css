@@ -1,0 +1,297 @@
+/* Reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body{
+    font-family: Arial, sans-serif;
+    background-color: #0f0f0f;
+    color: white;
+}
+
+/* Navigation Bar */
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 60px;
+    background-color: #111;
+}
+
+nav h2{
+    color: #00ff88;
+    font-size: 32px;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+nav a:hover{
+    color: #00ff88;
+}
+
+/* Hero Section */
+.hero{
+    text-align: center;
+    padding: 120px 20px;
+}
+
+.hero-title{
+    font-size: 80px;
+    color: #00ff88;
+    margin-bottom: 20px;
+}
+
+.tagline{
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
+.description{
+    font-size: 22px;
+    color: #cccccc;
+    max-width: 900px;
+    margin: auto;
+    line-height: 1.8;
+}
+
+.btn{
+    margin-top: 40px;
+    padding: 15px 35px;
+    font-size: 20px;
+    background-color: #00ff88;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn:hover{
+    background-color: white;
+}
+.about{
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.about h2{
+    font-size: 50px;
+    color: #00ff88;
+    margin-bottom: 30px;
+}
+
+.about p{
+    max-width: 900px;
+    margin: auto;
+    font-size: 22px;
+    color: #cccccc;
+    line-height: 1.8;
+}
+.services{
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.services h2{
+    font-size: 50px;
+    color: #00ff88;
+    margin-bottom: 50px;
+}
+
+.service-box{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 25px;
+    padding: 0 50px;
+}
+
+.service-box h3{
+    background: #111;
+    padding: 30px;
+    border-radius: 15px;
+    border: 2px solid #00ff88;
+    transition: 0.3s;
+}
+
+.service-box h3:hover{
+    transform: translateY(-10px);
+    background: #00ff88;
+    color: black;
+}
+/* Portfolio Section */
+
+.portfolio{
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.portfolio h2{
+    font-size: 50px;
+    color: #00ff88;
+    margin-bottom: 50px;
+}
+
+.portfolio-container{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.portfolio-card{
+    background: #111;
+    border: 2px solid #00ff88;
+    border-radius: 15px;
+    padding: 30px;
+    width: 300px;
+    transition: 0.3s;
+}
+
+.portfolio-card h3{
+    color: #00ff88;
+    margin-bottom: 15px;
+}
+
+.portfolio-card p{
+    color: #cccccc;
+    line-height: 1.6;
+}
+
+.portfolio-card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px #00ff88;
+}
+/* Contact Section */
+
+.contact{
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.contact h2{
+    font-size: 50px;
+    color: #00ff88;
+    margin-bottom: 40px;
+}
+
+.contact p{
+    font-size: 22px;
+    margin: 20px 0;
+    color: #cccccc;
+}
+
+.contact-btn{
+    margin-top: 30px;
+    padding: 15px 35px;
+    background: #00ff88;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.contact-btn:hover{
+    background: white;
+}
+html{
+    scroll-behavior: smooth;
+}
+/* Footer */
+
+footer{
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #111;
+    border-top: 2px solid #00ff88;
+}
+
+footer h3{
+    color: #00ff88;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+footer p{
+    color: #cccccc;
+    margin: 10px 0;
+}
+.logo{
+    width: 120px;
+    height: auto;
+}
+/* Mobile Responsive Design */
+
+@media (max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    nav a {
+        margin: 10px 0;
+    }
+
+    .hero-title {
+        font-size: 50px;
+    }
+
+    .tagline {
+        font-size: 28px;
+    }
+
+    .description {
+        font-size: 18px;
+        padding: 0 20px;
+    }
+
+    .service-box {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+    }
+
+    .portfolio-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .portfolio-card {
+        width: 90%;
+    }
+
+    .contact p {
+        font-size: 18px;
+    }
+}
+/* WhatsApp Floating Button */
+
+.whatsapp-float{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+    transition: 0.3s;
+}
+
+.whatsapp-float:hover{
+    transform: scale(1.1);
+}
