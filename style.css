@@ -4,7 +4,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 /* Body */
 body{
     font-family: Arial, sans-serif;
@@ -19,6 +18,10 @@ nav{
     align-items: center;
     padding: 25px 60px;
     background-color: #111;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 nav h2{
@@ -41,7 +44,7 @@ nav a:hover{
 /* Hero Section */
 .hero{
     text-align: center;
-    padding: 120px 20px;
+    padding: 150px 20px;
 }
 
 .hero-title{
@@ -58,13 +61,14 @@ nav a:hover{
 .description{
     font-size: 22px;
     color: #cccccc;
-    max-width: 900px;
-    margin: auto;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
     line-height: 1.8;
+    text-align: center;
 }
 
 .btn{
-    margin-top: 40px;
+    margin-top: 20px;
     padding: 15px 35px;
     font-size: 20px;
     background-color: #00ff88;
@@ -227,7 +231,7 @@ footer p{
     margin: 10px 0;
 }
 .logo{
-    width: 120px;
+    width: 140px;
     height: auto;
 }
 /* Mobile Responsive Design */
@@ -273,6 +277,9 @@ footer p{
     .contact p {
         font-size: 18px;
     }
+    .testimonial-card{
+    width: 90%;
+}
 }
 /* WhatsApp Floating Button */
 
@@ -280,18 +287,99 @@ footer p{
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #25D366;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
     color: white;
-    padding: 15px 20px;
-    border-radius: 50px;
+    border-radius: 50%;
     text-decoration: none;
-    font-weight: bold;
-    font-size: 18px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    z-index: 1000;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.3);
+}
+/* Statistics Section */
+
+.stats{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 80px 20px;
+    flex-wrap: wrap;
+}
+
+.stat-box{
+    background: #111;
+    border: 2px solid #00ff88;
+    border-radius: 15px;
+    padding: 30px;
+    width: 220px;
+    text-align: center;
     transition: 0.3s;
 }
 
-.whatsapp-float:hover{
-    transform: scale(1.1);
+.stat-box:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px #00ff88;
+}
+
+.stat-box h2{
+    color: #00ff88;
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.stat-box p{
+    color: #cccccc;
+    font-size: 20px;
+}
+/* Testimonials Section */
+
+.testimonials{
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.testimonials h2{
+    font-size: 50px;
+    color: #00ff88;
+    margin-bottom: 50px;
+}
+
+.testimonial-container{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.testimonial-card{
+    background: #111;
+    border: 2px solid #00ff88;
+    border-radius: 15px;
+    padding: 30px;
+    width: 320px;
+    transition: 0.3s;
+}
+
+.testimonial-card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px #00ff88;
+}
+
+.testimonial-card p{
+    color: #cccccc;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.testimonial-card h4{
+    margin-bottom: 10px;
+}
+
+.testimonial-card span{
+    color: #00ff88;
+    font-weight: bold;
 }
