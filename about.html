@@ -1,139 +1,596 @@
-<!DOCTYPE html>
+ad<!DOCTYPE html>
 <html lang="en">
 
-<head>
+<link rel="stylesheet"
+href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+</head>
 
     <meta charset="UTF-8">
 
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>About CGD MEDIA | Digital Marketing Agency</title>
+    <title>About Us | CGD MEDIA</title>
 
     <meta name="description"
-          content="Learn about CGD MEDIA, a digital marketing agency helping businesses build a strong online presence through social media marketing, advertising, content and branding.">
-
-    <meta name="author"
-          content="CGD MEDIA">
+          content="Learn more about CGD MEDIA, our mission, vision and the creative digital marketing solutions we provide.">
 
     <link rel="icon"
           type="image/png"
-          href="images/logo.png">
+          href="logo.png">
+
+    <!-- Font Awesome -->
 
     <link rel="stylesheet"
-          href="style.css">
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Common CSS -->
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+    <!-- About Page CSS -->
+
+    <link rel="stylesheet"
+          href="css/about.css">
+
+    <!-- Footer CSS -->
+
+    <link rel="stylesheet"
+          href="css/footer.css">
 
 </head>
+
 <script>
 
-window.addEventListener("scroll", function() {
+window.addEventListener("scroll",function(){
 
-    const nav = document.querySelector("nav");
+const nav=document.querySelector("nav");
 
-    if (window.scrollY > 50) {
+if(window.scrollY>50){
 
-        nav.classList.add("scrolled");
+nav.classList.add("scrolled");
 
-    } else {
+}else{
 
-        nav.classList.remove("scrolled");
+nav.classList.remove("scrolled");
 
-    }
+}
 
 });
 
 </script>
-<body>
 
-    <!-- Navigation -->
+<!-- AOS Library -->
 
-    <nav>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
-        <a href="index.html" class="logo-container">
+<script>
 
-            <img src="logo.png"
-                 alt="CGD MEDIA Logo"
-                 class="logo">
+AOS.init({
 
-        </a>
+    duration:900,
 
-        <div class="nav-links">
+    once:true,
 
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="services.html">Services</a>
-            <a href="portfolio.html">Portfolio</a>
-            <a href="testimonials.html">Testimonials</a>
-            <a href="contact.html">Contact</a>
+    offset:120,
 
-        </div>
+    easing:"ease-in-out"
 
-    </nav>
+});
 
+</script>
 
-    <!-- About -->
+</body>
 
-    <section class="page-section">
+<!-- =========================
+     NAVIGATION
+========================= -->
 
-        <h1>About Us</h1>
+<nav>
 
-        <p>
-            CGD MEDIA is a digital marketing agency focused on helping
-            businesses build a strong and professional online presence.
-        </p>
+    <a href="index.html" class="logo-container">
 
-        <p>
-            We help businesses improve their social media presence,
-            create engaging content, run digital advertising campaigns,
-            develop websites and build strong brands.
-        </p>
-
-        <p>
-            Our approach is simple — understand the business, understand
-            the audience and create digital strategies that help the brand grow.
-        </p>
-
-
-        <div class="mission-box">
-
-            <h2>Our Mission</h2>
-
-            <p>
-                To help businesses use digital marketing effectively and
-                turn their online presence into real business growth.
-            </p>
-
-            <h3>We Click. You Grow.</h3>
-
-        </div>
-
-    </section>
-
-
-    <!-- Footer -->
-
-    <footer>
-
-        <h3>CGD MEDIA</h3>
-
-        <p>We Click. You Grow.</p>
-
-        <p>
-            © 2026 CGD MEDIA. All Rights Reserved.
-        </p>
-
-    </footer>
-
-
-    <!-- WhatsApp -->
-
-    <a href="https://wa.me/917569798676"
-       class="whatsapp-float"
-       target="_blank">
-
-        💬
+        <img src="logo.png"
+             alt="CGD MEDIA Logo"
+             class="logo">
 
     </a>
+
+    <div class="nav-links">
+
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="contact.html">Contact</a>
+
+    </div>
+
+</nav>
+
+<!-- =========================
+     ABOUT HERO
+========================= -->
+
+<section class="about-hero">
+
+    <p class="section-label">
+        ABOUT CGD MEDIA
+    </p>
+
+    <h1>
+        Building Brands.<br>
+        Creating Growth.
+    </h1>
+
+    <p>
+        We help businesses establish a strong digital presence through
+        creative branding, social media marketing, website development,
+        content creation and performance-driven marketing strategies.
+    </p>
+
+    <a href="services.html" class="btn">
+        Explore Our Services
+    </a>
+
+</section>
+
+<!-- =========================
+     WHO WE ARE
+========================= -->
+
+<section class="about-content">
+
+    <div class="about-text">
+
+        <p class="section-label">
+            WHO WE ARE
+        </p>
+
+        <h2>
+            Your Creative Digital Growth Partner
+        </h2>
+
+        <p>
+
+            CGD MEDIA is a creative digital marketing agency dedicated to
+            helping businesses grow online through strategic marketing,
+            branding, creative design and powerful digital solutions.
+
+        </p>
+
+        <p>
+
+            Our team focuses on creating meaningful brand experiences that
+            attract customers, improve visibility and generate measurable
+            business growth.
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     MISSION & VISION
+========================= -->
+
+<section class="mission-section">
+
+<div class="mission-grid">
+
+<div class="mission-card">
+
+<h3>
+Our Mission
+</h3>
+
+<p>
+
+To empower businesses with innovative digital marketing solutions that
+create long-term growth, stronger branding and measurable success.
+
+</p>
+
+</div>
+
+<div class="mission-card">
+
+<h3>
+Our Vision
+</h3>
+
+<p>
+
+To become one of India's most trusted digital marketing agencies by
+delivering creativity, quality and outstanding customer experience.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+<!-- =========================
+     FOUNDER
+========================= -->
+
+<section class="founder-section">
+
+    <div class="founder-container">
+
+        <div class="founder-image">
+
+            <img src="abhinav.png"
+                 alt="Abhinav Mahendra">
+
+        </div>
+
+        <div class="founder-content">
+
+            <p class="section-label">
+                MEET THE FOUNDER
+            </p>
+
+            <h2>
+                Abhinav Mahendra
+            </h2>
+
+            <h4>
+                Founder & Digital Marketing Strategist
+            </h4>
+
+            <p>
+
+                CGD MEDIA was founded with a vision to help businesses
+                establish a strong digital presence through creativity,
+                strategy and innovation.
+
+            </p>
+
+            <p>
+
+                We believe every business deserves professional branding,
+                creative content and effective digital marketing that
+                delivers measurable growth and long-term success.
+
+            </p>
+
+            <blockquote>
+
+                "At CGD MEDIA, we believe every business deserves a brand that inspires confidence, earns trust and creates lasting impact. Our commitment is to deliver digital solutions that transform ideas into meaningful growth."
+
+— Abhinav Mahendra
+
+            </blockquote>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     WHY CHOOSE US
+========================= -->
+
+<section class="why-about">
+
+<p class="section-label">
+WHY CHOOSE US
+</p>
+
+<h2>
+Why Businesses Choose CGD MEDIA
+</h2>
+
+<div class="why-about-grid">
+
+<div class="why-about-card">
+
+<h3>Creative Ideas</h3>
+
+<p>Fresh and unique concepts for every business.</p>
+
+</div>
+
+<div class="why-about-card">
+
+<h3>Professional Designs</h3>
+
+<p>Modern visuals that build trust and brand value.</p>
+
+</div>
+
+<div class="why-about-card">
+
+<h3>Growth Focused</h3>
+
+<p>Strategies designed to increase visibility and leads.</p>
+
+</div>
+
+<div class="why-about-card">
+
+<h3>Dedicated Support</h3>
+
+<p>We're committed to helping your business succeed.</p>
+
+</div>
+
+</div>
+
+</section>
+<!-- =========================
+     CORE VALUES
+========================= -->
+
+<section class="core-values">
+
+    <p class="section-label">
+        OUR VALUES
+    </p>
+
+    <h2>
+        The Values That Drive Us
+    </h2>
+
+    <div class="values-grid">
+
+        <div class="value-card">
+
+            <h3>Innovation</h3>
+
+            <p>
+                We constantly explore new ideas and creative solutions
+                that help businesses stay ahead in the digital world.
+            </p>
+
+        </div>
+
+        <div class="value-card">
+
+            <h3>Transparency</h3>
+
+            <p>
+                Honest communication and clear strategies are the
+                foundation of every successful client relationship.
+            </p>
+
+        </div>
+
+        <div class="value-card">
+
+            <h3>Quality</h3>
+
+            <p>
+                Every design, campaign and website is created with
+                attention to detail and professionalism.
+            </p>
+
+        </div>
+
+        <div class="value-card">
+
+            <h3>Client Success</h3>
+
+            <p>
+                Your business growth is our biggest achievement.
+                We grow together.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     OUR JOURNEY
+========================= -->
+
+<section class="journey-section">
+
+    <p class="section-label">
+        OUR JOURNEY
+    </p>
+
+    <h2>
+        Growing Every Day
+    </h2>
+
+    <div class="journey-grid">
+
+        <div class="journey-card">
+
+            <h3>2026</h3>
+
+            <p>
+                CGD MEDIA was founded with a vision to help businesses
+                grow through creative digital marketing.
+            </p>
+
+        </div>
+
+        <div class="journey-card">
+
+            <h3>7+ Clients</h3>
+
+            <p>
+                Successfully working with brands across education,
+                furniture, automotive and event industries.
+            </p>
+
+        </div>
+
+        <div class="journey-card">
+
+            <h3>Multiple Services</h3>
+
+            <p>
+                Social Media, Branding, Websites,
+                Meta Ads and Creative Design.
+            </p>
+
+        </div>
+
+        <div class="journey-card">
+
+            <h3>Growing</h3>
+
+            <p>
+                Every new client motivates us to build
+                bigger, better and stronger brands.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="about-cta">
+
+    <p class="section-label">
+        LET'S GROW TOGETHER
+    </p>
+
+    <h2>
+        Ready to Grow Your Business?
+    </h2>
+
+    <p>
+
+        Whether you're starting a new business or expanding an
+        existing one, CGD MEDIA is here to help you build a
+        powerful digital presence.
+
+    </p>
+
+    <a href="contact.html" class="btn">
+        Contact Us
+    </a>
+
+</section>
+
+<!-- =========================
+     FOOTER CTA
+========================= -->
+
+<section class="footer-cta">
+
+    <p class="section-label">
+        LET'S GROW TOGETHER
+    </p>
+
+    <h2>
+        Ready to Grow Your Business?
+    </h2>
+
+    <p>
+        Let's build a powerful digital presence that helps
+        your business attract more customers and grow faster.
+    </p>
+
+    <a href="contact.html" class="btn">
+        Get Free Consultation
+    </a>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="main-footer">
+
+    <img src="logo.png"
+         alt="CGD MEDIA"
+         class="footer-logo">
+
+    <p class="footer-tagline">
+
+        Helping Businesses Grow Through Creative Digital Marketing,
+        Branding & Website Development.
+
+    </p>
+
+    <div class="footer-links">
+
+        <a href="index.html">Home</a>
+
+        <a href="about.html">About</a>
+
+        <a href="services.html">Services</a>
+
+        <a href="portfolio.html">Portfolio</a>
+
+        <a href="testimonials.html">Testimonials</a>
+
+        <a href="contact.html">Contact</a>
+
+    </div>
+
+    <div class="footer-contact">
+
+        <span>📍 Hyderabad | Mancherial</span>
+
+        <span>📞 +91 75697 98676</span>
+
+        <span>✉️ info@cgdmedia.in</span>
+
+    </div>
+
+  <div class="footer-social">
+
+    <a href="https://www.instagram.com/cgd_media" target="_blank">
+        <i class="fab fa-instagram"></i>
+    </a>
+
+    <a href="#">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+
+    <a href="#">
+        <i class="fab fa-linkedin-in"></i>
+    </a>
+
+    <a href="https://wa.me/917569798676" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</div>
+    <div class="footer-copy">
+
+        © 2026 CGD MEDIA • All Rights Reserved.
+
+    </div>
+
+</footer>
+<!-- =========================
+     WHATSAPP
+========================= -->
+
+<a href="https://wa.me/917569798676"
+   class="whatsapp-float"
+   target="_blank">
+
+    💬
+
+</a>
 
 </body>
 
