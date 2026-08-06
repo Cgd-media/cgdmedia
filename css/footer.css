@@ -1,0 +1,392 @@
+/* =====================================================
+   PREMIUM FOOTER
+===================================================== */
+
+
+/* =========================
+   FOOTER CTA
+========================= */
+
+.footer-cta{
+
+    background:linear-gradient(135deg,#EAF6EE,#F8F9F4);
+
+    text-align:center;
+
+    padding:100px 20px;
+
+}
+
+.footer-cta h2{
+
+    max-width:800px;
+
+    margin:20px auto;
+
+}
+
+.footer-cta p{
+
+    max-width:700px;
+
+    margin:0 auto 40px;
+
+    color:var(--text-light);
+
+    font-size:18px;
+
+    line-height:1.9;
+
+}
+
+
+
+/* =========================
+   MAIN FOOTER
+========================= */
+
+.main-footer{
+
+    background:#111111;
+
+    color:#ffffff;
+
+    text-align:center;
+
+    padding:70px 20px 30px;
+
+}
+
+.footer-container{
+
+    max-width:1200px;
+
+    margin:auto;
+
+}
+
+
+
+/* =========================
+   LOGO
+========================= */
+
+.footer-logo{
+
+    width:150px;
+
+    margin:0 auto 25px;
+
+}
+
+.main-footer h3{
+
+    color:#ffffff;
+
+    font-size:28px;
+
+    margin-bottom:15px;
+
+}
+
+.footer-tagline{
+
+    max-width:650px;
+
+    margin:0 auto 35px;
+
+    color:#BDBDBD;
+
+    line-height:1.9;
+
+}
+
+
+
+/* =========================
+   FOOTER LINKS
+========================= */
+
+.footer-links{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:30px;
+
+    margin-bottom:40px;
+
+}
+
+.footer-links a{
+
+    color:#ffffff;
+
+    font-weight:500;
+
+    transition:.35s;
+
+    position:relative;
+
+}
+
+.footer-links a:hover{
+
+    color:var(--saffron);
+
+}
+
+.footer-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-6px;
+
+    width:0;
+
+    height:2px;
+
+    background:var(--saffron);
+
+    transition:.35s;
+
+}
+
+.footer-links a:hover::after{
+
+    width:100%;
+
+}
+/* =====================================================
+   SOCIAL ICONS
+===================================================== */
+
+
+.footer-social{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+    margin:35px 0;
+
+}
+
+.footer-social a{
+
+    width:50px;
+
+    height:50px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-size:20px;
+
+    transition:.3s;
+
+}
+
+.footer-social a:hover{
+
+    background:var(--saffron);
+
+    transform:translateY(-5px);
+
+}
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.footer-contact{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:35px;
+
+    margin-bottom:40px;
+
+}
+
+.footer-contact p{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:#CFCFCF;
+
+    font-size:16px;
+
+}
+
+.footer-contact i{
+
+    color:var(--green);
+
+    font-size:18px;
+
+}
+
+
+
+/* =====================================================
+   COPYRIGHT
+===================================================== */
+
+.footer-copy{
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    padding-top:25px;
+
+    color:#9CA3AF;
+
+    font-size:15px;
+
+}
+
+
+
+/* =====================================================
+   HOVER EFFECTS
+===================================================== */
+
+.main-footer a{
+
+    transition:.35s;
+
+}
+
+.main-footer a:hover{
+
+    color:var(--saffron);
+
+}
+
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:768px){
+
+.footer-logo{
+
+width:120px;
+
+}
+
+.main-footer h3{
+
+font-size:24px;
+
+}
+
+.footer-links{
+
+gap:18px;
+
+}
+
+.footer-contact{
+
+flex-direction:column;
+
+gap:18px;
+
+}
+
+.footer-social{
+
+gap:15px;
+
+}
+
+.footer-social a{
+
+width:46px;
+
+height:46px;
+
+font-size:18px;
+
+}
+
+.footer-copy{
+
+font-size:14px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.footer-cta{
+
+padding:80px 20px;
+
+}
+
+.footer-cta h2{
+
+font-size:30px;
+
+}
+
+.footer-cta p{
+
+font-size:16px;
+
+}
+
+.footer-links{
+
+flex-direction:column;
+
+gap:14px;
+
+}
+
+.footer-contact p{
+
+font-size:15px;
+
+}
+
+}

@@ -1,0 +1,770 @@
+/* =====================================================
+   TESTIMONIALS PAGE
+===================================================== */
+
+
+/* =========================
+   HERO
+========================= */
+
+.testimonial-hero{
+
+    background:linear-gradient(180deg,#F8F9F4 0%,#EAF6EE 100%);
+    text-align:center;
+    padding:120px 20px;
+
+}
+
+.testimonial-hero h1{
+
+    font-size:62px;
+    color:var(--green-dark);
+    line-height:1.2;
+    margin:20px 0;
+
+}
+
+.testimonial-hero p{
+
+    max-width:760px;
+    margin:0 auto;
+    color:var(--text-light);
+    font-size:18px;
+    line-height:1.9;
+
+}
+
+
+
+/* =========================
+   RATING
+========================= */
+
+.hero-rating{
+
+    margin:60px auto 0;
+
+    background:#fff;
+
+    max-width:430px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:25px;
+
+    padding:25px 35px;
+
+    border-radius:20px;
+
+    border:1px solid #EAEAEA;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+}
+
+.rating-number h2{
+
+    font-size:52px;
+
+    color:var(--green);
+
+}
+
+.rating-content{
+
+    text-align:left;
+
+}
+
+.rating-content .stars{
+
+    color:#FFC107;
+
+    font-size:20px;
+
+    margin-bottom:8px;
+
+}
+
+.rating-content p{
+
+    color:var(--text-light);
+
+    font-size:15px;
+
+}
+
+
+
+/* =========================
+   TESTIMONIAL SECTION
+========================= */
+
+.testimonials-page{
+
+    background:#ffffff;
+
+    text-align:center;
+
+    padding:100px 20px;
+
+}
+
+.testimonial-grid{
+
+    max-width:1200px;
+
+    margin:60px auto 0;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:35px;
+
+}
+/* =====================================================
+   TESTIMONIAL CARDS
+===================================================== */
+
+.testimonial-card{
+
+    background:#ffffff;
+
+    border:1px solid #e8e8e8;
+
+    border-radius:22px;
+
+    padding:35px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:all .35s ease;
+
+    text-align:left;
+
+    display:flex;
+
+    flex-direction:column;
+
+    height:100%;
+
+}
+
+.testimonial-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:var(--saffron);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.15);
+
+}
+
+
+
+/* =========================
+   REVIEW HEADER
+========================= */
+
+.review-top{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    margin-bottom:20px;
+
+}
+
+.review-icon{
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:50%;
+
+    background:var(--green-light);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:var(--green);
+
+    font-size:26px;
+
+    transition:.35s;
+
+}
+
+.testimonial-card:hover .review-icon{
+
+    background:#FFF4E5;
+
+    color:var(--saffron);
+
+}
+
+.review-top h3{
+
+    color:var(--green-dark);
+
+    font-size:22px;
+
+    margin-bottom:6px;
+
+}
+
+.review-service{
+
+    display:inline-block;
+
+    padding:6px 14px;
+
+    background:var(--green-light);
+
+    color:var(--green);
+
+    border-radius:30px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+.testimonial-card:hover .review-service{
+
+    background:#FFF4E5;
+
+    color:var(--saffron);
+
+}
+
+
+
+/* =========================
+   STARS
+========================= */
+
+.testimonial-card .stars{
+
+    color:#FFC107;
+
+    font-size:18px;
+
+    margin:15px 0;
+
+}
+
+
+
+/* =========================
+   REVIEW TEXT
+========================= */
+
+.testimonial-card p{
+
+    color:var(--text-light);
+
+    line-height:1.9;
+
+    flex:1;
+
+    font-size:16px;
+
+    margin-top:10px;
+
+}
+
+
+
+/* =========================
+   CARD TOP BORDER
+========================= */
+
+.testimonial-card::before{
+
+    content:"";
+
+    display:block;
+
+    width:100%;
+
+    height:5px;
+
+    background:var(--green);
+
+    margin:-35px -35px 30px;
+
+    width:calc(100% + 70px);
+
+    transition:.35s;
+
+}
+
+.testimonial-card:hover::before{
+
+    background:var(--saffron);
+
+}
+/* =====================================================
+   WHY CLIENTS TRUST US
+===================================================== */
+
+.testimonial-trust{
+
+    background:var(--green-light);
+
+    padding:110px 20px;
+
+    text-align:center;
+
+}
+
+.trust-grid{
+
+    max-width:1200px;
+
+    margin:60px auto 0;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+}
+
+.trust-card{
+
+    background:#fff;
+
+    border:1px solid #e8e8e8;
+
+    border-radius:20px;
+
+    padding:40px 30px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+}
+
+.trust-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:var(--saffron);
+
+    box-shadow:0 18px 35px rgba(0,0,0,.12);
+
+}
+
+.trust-card i{
+
+    font-size:42px;
+
+    color:var(--green);
+
+    margin-bottom:20px;
+
+    transition:.35s;
+
+}
+
+.trust-card:hover i{
+
+    color:var(--saffron);
+
+    transform:scale(1.1);
+
+}
+
+.trust-card h3{
+
+    color:var(--green-dark);
+
+    margin-bottom:15px;
+
+    font-size:24px;
+
+}
+
+.trust-card p{
+
+    color:var(--text-light);
+
+    line-height:1.8;
+
+}
+
+
+
+/* =====================================================
+   ACHIEVEMENTS
+===================================================== */
+
+.testimonial-achievements{
+
+    max-width:1200px;
+
+    margin:100px auto;
+
+    padding:0 20px;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+}
+
+.testimonial-achievements .achievement-card{
+
+    background:#fff;
+
+    border:1px solid #e8e8e8;
+
+    border-radius:20px;
+
+    padding:40px 25px;
+
+    text-align:center;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+}
+
+.testimonial-achievements .achievement-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:var(--saffron);
+
+}
+
+.testimonial-achievements .achievement-card i{
+
+    font-size:42px;
+
+    color:var(--green);
+
+    margin-bottom:18px;
+
+    transition:.35s;
+
+}
+
+.testimonial-achievements .achievement-card:hover i{
+
+    color:var(--saffron);
+
+}
+
+.testimonial-achievements .achievement-card h2{
+
+    font-size:42px;
+
+    color:var(--green-dark);
+
+    margin-bottom:10px;
+
+}
+
+.testimonial-achievements .achievement-card p{
+
+    color:var(--text-light);
+
+}
+
+
+
+/* =====================================================
+   CTA
+===================================================== */
+
+.testimonial-cta{
+
+    background:linear-gradient(135deg,#EAF6EE,#ffffff);
+
+    text-align:center;
+
+    padding:120px 20px;
+
+}
+
+.testimonial-cta h2{
+
+    max-width:800px;
+
+    margin:20px auto;
+
+}
+
+.testimonial-cta p{
+
+    max-width:720px;
+
+    margin:0 auto 40px;
+
+    color:var(--text-light);
+
+    font-size:18px;
+
+    line-height:1.9;
+
+}
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width:1200px){
+
+    .testimonial-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media (max-width:992px){
+
+    .testimonial-hero{
+
+        padding:100px 20px;
+
+    }
+
+    .testimonial-hero h1{
+
+        font-size:50px;
+
+    }
+
+    .hero-rating{
+
+        max-width:500px;
+
+    }
+
+    .trust-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .testimonial-achievements{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .testimonial-hero{
+
+        padding:90px 20px;
+
+    }
+
+    .testimonial-hero h1{
+
+        font-size:40px;
+
+        line-height:1.3;
+
+    }
+
+    .testimonial-hero p{
+
+        font-size:17px;
+
+    }
+
+    .hero-rating{
+
+        flex-direction:column;
+
+        gap:15px;
+
+        text-align:center;
+
+        padding:25px;
+
+    }
+
+    .rating-content{
+
+        text-align:center;
+
+    }
+
+    .testimonial-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .trust-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .testimonial-achievements{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .testimonial-card{
+
+        max-width:550px;
+
+        margin:auto;
+
+    }
+
+}
+
+@media (max-width:480px){
+
+    .testimonial-hero h1{
+
+        font-size:32px;
+
+    }
+
+    .testimonial-hero p{
+
+        font-size:16px;
+
+    }
+
+    .testimonial-card{
+
+        padding:25px;
+
+    }
+
+    .review-top{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        gap:15px;
+
+    }
+
+    .review-top h3{
+
+        font-size:20px;
+
+    }
+
+    .review-service{
+
+        font-size:12px;
+
+    }
+
+}
+
+
+
+/* =====================================================
+   PREMIUM EFFECTS
+===================================================== */
+
+.testimonial-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.testimonial-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:4px;
+
+    background:var(--green);
+
+    transition:.35s;
+
+}
+
+.testimonial-card:hover::after{
+
+    background:var(--saffron);
+
+}
+
+.review-icon,
+.trust-card,
+.achievement-card{
+
+    transition:all .35s ease;
+
+}
+
+.review-icon{
+
+    box-shadow:0 8px 20px rgba(46,158,91,.15);
+
+}
+
+.review-icon:hover{
+
+    transform:scale(1.08);
+
+}
+
+
+
+/* =====================================================
+   SMOOTH ANIMATIONS
+===================================================== */
+
+.testimonial-card,
+.trust-card,
+.achievement-card{
+
+    animation:fadeUp .8s ease;
+
+}
+
+.testimonial-card:hover{
+
+    box-shadow:0 20px 40px rgba(0,0,0,.14);
+
+}

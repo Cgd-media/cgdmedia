@@ -1,0 +1,1115 @@
+/* =====================================================
+   CGD MEDIA V2
+   COMMON STYLES
+===================================================== */
+
+/* =========================
+   GOOGLE FONT
+========================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+
+/* =========================
+   ROOT COLORS
+========================= */
+
+:root{
+
+    --bg:#F8F9F4;
+
+    --white:#FFFFFF;
+
+    /* Brand Green */
+
+    --green:#2E9E5B;
+
+    --green-dark:#1E7D45;
+
+    --green-light:#EAF6EE;
+
+    /* Accent */
+
+    --saffron:#F59E0B;
+
+    --saffron-light:#FFF5E5;
+
+    /* Text */
+
+    --black:#111111;
+
+    --text:#2C2C2C;
+
+    --text-light:#6B7280;
+
+    --border:#E4E8E2;
+
+    --shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    overflow-x:hidden;
+
+}
+
+
+/* =========================
+   COMMON
+========================= */
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+a{
+
+    text-decoration:none;
+
+}
+
+ul{
+
+    list-style:none;
+
+}
+
+section{
+
+    padding:100px 20px;
+
+}
+
+.container{
+
+    width:100%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+}
+
+
+/* =========================
+   HEADINGS
+========================= */
+
+.section-label{
+
+    display:inline-block;
+
+    color:var(--saffron);
+
+    font-size:14px;
+
+    font-weight:700;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    margin-bottom:18px;
+
+}
+
+h1{
+
+    font-size:64px;
+
+    color:var(--green-dark);
+
+    line-height:1.15;
+
+}
+
+h2{
+
+    font-size:46px;
+
+    color:var(--green-dark);
+
+    margin-bottom:20px;
+
+}
+
+h3{
+
+    font-size:24px;
+
+    color:var(--green-dark);
+
+}
+
+.section-intro{
+
+    max-width:760px;
+
+    margin:0 auto 60px;
+
+    text-align:center;
+
+    color:var(--text-light);
+
+    line-height:1.9;
+
+    font-size:18px;
+
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:16px 34px;
+
+    background:var(--green);
+
+    color:#fff;
+
+    border-radius:10px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+    box-shadow:var(--shadow);
+
+}
+
+.btn:hover{
+
+    background:var(--saffron);
+
+    transform:translateY(-4px);
+
+}
+
+.secondary-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:16px 34px;
+
+    border:2px solid var(--green);
+
+    color:var(--green-dark);
+
+    border-radius:10px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.secondary-btn:hover{
+
+    background:var(--green);
+
+    color:#fff;
+
+}
+
+
+/* =========================
+   PAGE TITLE
+========================= */
+
+.page-section{
+
+    text-align:center;
+
+}
+
+.page-section h1{
+
+    margin-bottom:20px;
+
+}
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+nav{
+
+    position:sticky;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    background:#111111;
+
+    padding:18px 60px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    z-index:9999;
+
+    transition:all .35s ease;
+
+}
+
+nav.scrolled{
+
+    padding:10px 60px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.18);
+
+}
+
+.logo{
+
+    width:150px;
+
+    transition:.35s;
+
+}
+
+nav.scrolled .logo{
+
+    width:120px;
+
+}
+
+.nav-links{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:35px;
+
+}
+
+.nav-links a{
+
+    color:#ffffff;
+
+    font-size:16px;
+
+    font-weight:500;
+
+    position:relative;
+
+    transition:.3s;
+
+}
+
+.nav-links a:hover{
+
+    color:var(--saffron);
+
+}
+
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:2px;
+
+    background:var(--saffron);
+
+    transition:.3s;
+
+}
+
+.nav-links a:hover::after{
+
+    width:100%;
+
+}
+
+
+
+/* =====================================================
+   COMMON CARDS
+===================================================== */
+
+.card{
+
+    background:var(--white);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:35px;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:var(--green);
+
+    box-shadow:0 20px 35px rgba(46,158,91,.12);
+
+}
+
+
+
+/* =====================================================
+   ICON STYLE
+===================================================== */
+
+.icon-circle{
+
+    width:70px;
+
+    height:70px;
+
+    margin:0 auto 20px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:var(--green-light);
+
+    color:var(--green);
+
+    font-size:28px;
+
+    transition:.35s;
+
+}
+
+.card:hover .icon-circle{
+
+    background:var(--saffron-light);
+
+    color:var(--saffron);
+
+    transform:scale(1.08);
+
+}
+
+
+
+/* =====================================================
+   WHATSAPP FLOAT
+===================================================== */
+
+.whatsapp-float{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:60px;
+
+    height:60px;
+
+    background:#25D366;
+
+    color:#fff;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:30px;
+
+    box-shadow:0 12px 25px rgba(0,0,0,.25);
+
+    z-index:9999;
+
+    transition:.35s;
+
+}
+
+.whatsapp-float:hover{
+
+    transform:scale(1.1);
+
+    background:var(--saffron);
+
+}
+
+
+
+/* =====================================================
+   TEXT UTILITIES
+===================================================== */
+
+.text-center{
+
+    text-align:center;
+
+}
+
+.text-left{
+
+    text-align:left;
+
+}
+
+.mt-30{
+
+    margin-top:30px;
+
+}
+
+.mt-50{
+
+    margin-top:50px;
+
+}
+
+.mb-30{
+
+    margin-bottom:30px;
+
+}
+
+.mb-50{
+
+    margin-bottom:50px;
+
+}
+/* =====================================================
+   COMMON GRID SYSTEM
+===================================================== */
+
+.grid-2{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:40px;
+
+}
+
+.grid-3{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+.grid-4{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+}
+
+
+
+/* =====================================================
+   COMMON IMAGE STYLES
+===================================================== */
+
+.image-box{
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.image-box img{
+
+    width:100%;
+
+    display:block;
+
+    transition:.45s;
+
+}
+
+.image-box:hover img{
+
+    transform:scale(1.08);
+
+}
+
+
+
+/* =====================================================
+   COMMON HOVER EFFECT
+===================================================== */
+
+.hover-lift{
+
+    transition:.35s;
+
+}
+
+.hover-lift:hover{
+
+    transform:translateY(-10px);
+
+}
+
+
+
+/* =====================================================
+   DIVIDERS
+===================================================== */
+
+.divider{
+
+    width:80px;
+
+    height:4px;
+
+    background:var(--green);
+
+    margin:20px auto;
+
+    border-radius:50px;
+
+}
+
+.divider-saffron{
+
+    width:60px;
+
+    height:3px;
+
+    background:var(--saffron);
+
+    margin:15px auto;
+
+    border-radius:50px;
+
+}
+
+
+
+/* =====================================================
+   SECTION BACKGROUNDS
+===================================================== */
+
+.bg-light{
+
+    background:var(--green-light);
+
+}
+
+.bg-white{
+
+    background:#fff;
+
+}
+
+.bg-dark{
+
+    background:#111111;
+
+    color:#fff;
+
+}
+
+
+
+/* =====================================================
+   TRANSITIONS
+===================================================== */
+
+a,
+button,
+.card,
+.btn,
+.secondary-btn{
+
+    transition:all .35s ease;
+
+}
+
+
+
+/* =====================================================
+   SELECTION
+===================================================== */
+
+::selection{
+
+    background:var(--green);
+
+    color:#fff;
+
+}
+
+
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#ececec;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--green);
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--saffron);
+
+}
+
+
+
+/* =====================================================
+   FADE ANIMATION
+===================================================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.fade-up{
+
+    animation:fadeUp .8s ease forwards;
+
+}
+
+
+
+/* =====================================================
+   COMMON SPACING
+===================================================== */
+
+.py-100{
+
+    padding:100px 0;
+
+}
+
+.py-80{
+
+    padding:80px 0;
+
+}
+
+.pt-100{
+
+    padding-top:100px;
+
+}
+
+.pb-100{
+
+    padding-bottom:100px;
+
+}
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width:1200px){
+
+.container{
+
+width:90%;
+
+}
+
+.grid-4{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.grid-3{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+
+
+@media (max-width:992px){
+
+nav{
+
+padding:16px 30px;
+
+}
+
+nav.scrolled{
+
+padding:12px 30px;
+
+}
+
+.logo{
+
+width:130px;
+
+}
+
+nav.scrolled .logo{
+
+width:105px;
+
+}
+
+.nav-links{
+
+gap:20px;
+
+}
+
+h1{
+
+font-size:52px;
+
+}
+
+h2{
+
+font-size:38px;
+
+}
+
+.section-intro{
+
+font-size:17px;
+
+}
+
+.grid-2{
+
+grid-template-columns:1fr;
+
+}
+
+.grid-3{
+
+grid-template-columns:1fr;
+
+}
+
+.grid-4{
+
+grid-template-columns:1fr 1fr;
+
+}
+
+section{
+
+padding:80px 20px;
+
+}
+
+}
+
+
+
+@media (max-width:768px){
+
+nav{
+
+padding:15px 20px;
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+nav.scrolled{
+
+padding:12px 20px;
+
+}
+
+.logo{
+
+width:120px;
+
+}
+
+nav.scrolled .logo{
+
+width:95px;
+
+}
+
+.nav-links{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:15px;
+
+}
+
+.nav-links a{
+
+font-size:15px;
+
+}
+
+h1{
+
+font-size:40px;
+
+}
+
+h2{
+
+font-size:32px;
+
+}
+
+h3{
+
+font-size:22px;
+
+}
+
+.section-intro{
+
+font-size:16px;
+
+margin-bottom:40px;
+
+}
+
+.grid-4{
+
+grid-template-columns:1fr;
+
+}
+
+.card{
+
+padding:30px 20px;
+
+}
+
+.btn,
+
+.secondary-btn{
+
+width:100%;
+
+max-width:280px;
+
+margin:auto;
+
+}
+
+.icon-circle{
+
+width:60px;
+
+height:60px;
+
+font-size:24px;
+
+}
+
+.whatsapp-float{
+
+width:55px;
+
+height:55px;
+
+font-size:26px;
+
+right:18px;
+
+bottom:18px;
+
+}
+
+}
+
+
+
+@media (max-width:480px){
+
+body{
+
+font-size:15px;
+
+}
+
+section{
+
+padding:70px 15px;
+
+}
+
+h1{
+
+font-size:34px;
+
+line-height:1.25;
+
+}
+
+h2{
+
+font-size:28px;
+
+}
+
+h3{
+
+font-size:20px;
+
+}
+
+.section-label{
+
+font-size:12px;
+
+letter-spacing:2px;
+
+}
+
+.section-intro{
+
+font-size:15px;
+
+}
+
+.logo{
+
+width:110px;
+
+}
+
+.nav-links{
+
+gap:12px;
+
+}
+
+.nav-links a{
+
+font-size:14px;
+
+}
+
+}
+
+
+
+/* =====================================================
+   END OF COMMON CSS
+===================================================== */

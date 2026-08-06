@@ -1,0 +1,687 @@
+/* =====================================================
+   SERVICES PAGE
+===================================================== */
+
+
+/* =========================
+   HERO
+========================= */
+
+.services-hero{
+
+    background:linear-gradient(180deg,#F8F9F4 0%,#EAF6EE 100%);
+
+    text-align:center;
+
+    padding:120px 20px;
+
+}
+
+.services-hero h1{
+
+    font-size:64px;
+
+    color:var(--green-dark);
+
+    margin:20px 0;
+
+    line-height:1.2;
+
+}
+
+.services-hero p{
+
+    max-width:780px;
+
+    margin:0 auto 40px;
+
+    color:var(--text-light);
+
+    font-size:19px;
+
+    line-height:1.9;
+
+}
+
+
+
+/* =========================
+   SERVICES
+========================= */
+
+.services-page{
+
+    background:#ffffff;
+
+    text-align:center;
+
+}
+
+.service-grid{
+
+    max-width:1200px;
+
+    margin:60px auto 0;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+}
+
+.service-card{
+
+    background:#fff;
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    padding:40px 30px;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+
+}
+
+.service-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:var(--saffron);
+
+}
+
+.service-icon{
+
+    width:80px;
+
+    height:80px;
+
+    margin:0 auto 25px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:var(--green-light);
+
+    border-radius:50%;
+
+    font-size:34px;
+
+    color:var(--green);
+
+    transition:.35s;
+
+}
+
+.service-card:hover .service-icon{
+
+    background:var(--saffron-light);
+
+    color:var(--saffron);
+
+    transform:rotate(10deg) scale(1.08);
+
+}
+
+.service-card h3{
+
+    margin-bottom:18px;
+
+    color:var(--green-dark);
+
+}
+
+.service-card p{
+
+    color:var(--text-light);
+
+    line-height:1.9;
+
+}
+/* =====================================================
+   OUR PROCESS
+===================================================== */
+
+.service-process{
+
+    background:var(--green-light);
+
+    text-align:center;
+
+}
+
+.process-grid{
+
+    max-width:1200px;
+
+    margin:60px auto 0;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+}
+
+.process-card{
+
+    background:#ffffff;
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    padding:45px 30px;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+
+    position:relative;
+
+}
+
+.process-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:var(--saffron);
+
+}
+
+.process-number{
+
+    width:70px;
+
+    height:70px;
+
+    margin:0 auto 25px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:var(--green);
+
+    color:#fff;
+
+    font-size:26px;
+
+    font-weight:700;
+
+    border-radius:50%;
+
+    transition:.35s;
+
+}
+
+.process-card:hover .process-number{
+
+    background:var(--saffron);
+
+    transform:scale(1.08);
+
+}
+
+.process-card h3{
+
+    color:var(--green-dark);
+
+    margin-bottom:18px;
+
+}
+
+.process-card p{
+
+    color:var(--text-light);
+
+    line-height:1.9;
+
+}
+
+
+
+/* =====================================================
+   WHY CHOOSE US
+===================================================== */
+
+.service-why{
+
+    background:#ffffff;
+
+    text-align:center;
+
+}
+
+.service-why .why-about-grid{
+
+    max-width:1200px;
+
+    margin:60px auto 0;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+}
+
+.service-why .why-about-card{
+
+    background:#fff;
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    padding:40px 30px;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+
+}
+
+.service-why .why-about-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:var(--saffron);
+
+}
+
+.service-why .why-about-card i{
+
+    font-size:42px;
+
+    color:var(--green);
+
+    margin-bottom:20px;
+
+    transition:.35s;
+
+}
+
+.service-why .why-about-card:hover i{
+
+    color:var(--saffron);
+
+    transform:scale(1.1);
+
+}
+
+.service-why .why-about-card h3{
+
+    color:var(--green-dark);
+
+    margin-bottom:15px;
+
+}
+
+.service-why .why-about-card p{
+
+    color:var(--text-light);
+
+    line-height:1.8;
+
+}
+/* =====================================================
+   FAQ SECTION
+===================================================== */
+
+.faq-section{
+
+    background:var(--green-light);
+
+    text-align:center;
+
+}
+
+.faq-container{
+
+    max-width:1000px;
+
+    margin:60px auto 0;
+
+}
+
+.faq-item{
+
+    background:#ffffff;
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:30px;
+
+    margin-bottom:25px;
+
+    text-align:left;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+
+}
+
+.faq-item:hover{
+
+    border-color:var(--saffron);
+
+    transform:translateY(-5px);
+
+}
+
+.faq-item h3{
+
+    color:var(--green-dark);
+
+    margin-bottom:15px;
+
+    font-size:22px;
+
+}
+
+.faq-item p{
+
+    color:var(--text-light);
+
+    line-height:1.9;
+
+}
+
+
+
+/* =====================================================
+   SERVICE CTA
+===================================================== */
+
+.service-cta{
+
+    background:linear-gradient(135deg,var(--green-light),#ffffff);
+
+    text-align:center;
+
+    padding:120px 20px;
+
+}
+
+.service-cta h2{
+
+    max-width:800px;
+
+    margin:20px auto;
+
+}
+
+.service-cta p{
+
+    max-width:700px;
+
+    margin:0 auto 40px;
+
+    color:var(--text-light);
+
+    font-size:18px;
+
+    line-height:1.9;
+
+}
+
+
+
+/* =====================================================
+   BUTTON ANIMATION
+===================================================== */
+
+.service-cta .btn{
+
+    min-width:240px;
+
+}
+
+.service-cta .btn:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 15px 30px rgba(245,158,11,.25);
+
+}
+
+
+
+/* =====================================================
+   SECTION SPACING
+===================================================== */
+
+.services-page,
+.service-process,
+.service-why,
+.faq-section,
+.service-cta{
+
+    padding:100px 20px;
+
+}
+
+
+
+/* =====================================================
+   CARD ANIMATION
+===================================================== */
+
+.service-card,
+.process-card,
+.why-about-card,
+.faq-item{
+
+    animation:fadeUp .8s ease;
+
+}
+/* =====================================================
+   RESPONSIVE DESIGN
+===================================================== */
+
+@media (max-width:992px){
+
+    .service-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .process-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .service-why .why-about-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .services-hero h1{
+
+        font-size:52px;
+
+    }
+
+}
+
+
+
+@media (max-width:768px){
+
+    .services-hero{
+
+        padding:90px 20px;
+
+    }
+
+    .services-hero h1{
+
+        font-size:42px;
+
+        line-height:1.3;
+
+    }
+
+    .services-hero p{
+
+        font-size:17px;
+
+    }
+
+    .service-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .process-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .service-why .why-about-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .service-card,
+
+    .process-card,
+
+    .why-about-card,
+
+    .faq-item{
+
+        padding:30px 25px;
+
+    }
+
+}
+
+
+
+@media (max-width:480px){
+
+    .services-hero h1{
+
+        font-size:34px;
+
+    }
+
+    .services-hero p{
+
+        font-size:16px;
+
+    }
+
+    .service-icon{
+
+        width:70px;
+
+        height:70px;
+
+        font-size:28px;
+
+    }
+
+    .process-number{
+
+        width:60px;
+
+        height:60px;
+
+        font-size:22px;
+
+    }
+
+    .faq-item h3{
+
+        font-size:20px;
+
+    }
+
+}
+
+
+
+/* =====================================================
+   SMALL POLISH
+===================================================== */
+
+.service-card,
+.process-card,
+.why-about-card,
+.faq-item{
+
+    cursor:default;
+
+}
+
+.service-card:hover h3,
+.process-card:hover h3,
+.why-about-card:hover h3{
+
+    color:var(--saffron);
+
+}
+
+.service-card,
+.process-card,
+.why-about-card{
+
+    overflow:hidden;
+
+}
+
+.service-card::before,
+.process-card::before,
+.why-about-card::before{
+
+    content:"";
+
+    display:block;
+
+    width:50px;
+
+    height:4px;
+
+    background:var(--green);
+
+    border-radius:20px;
+
+    margin:0 auto 20px;
+
+    transition:.35s;
+
+}
+
+.service-card:hover::before,
+.process-card:hover::before,
+.why-about-card:hover::before{
+
+    width:90px;
+
+    background:var(--saffron);
+
+}

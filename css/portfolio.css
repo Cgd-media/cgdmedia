@@ -1,0 +1,780 @@
+/* =====================================================
+   PORTFOLIO PAGE
+===================================================== */
+
+/* =========================
+   HERO
+========================= */
+
+.portfolio-hero{
+
+    background:linear-gradient(180deg,#F8F9F4 0%,#EAF6EE 100%);
+    text-align:center;
+    padding:120px 20px;
+
+}
+
+.portfolio-hero h1{
+
+    font-size:62px;
+    color:var(--green-dark);
+    line-height:1.2;
+    margin:20px 0;
+
+}
+
+.portfolio-hero p{
+
+    max-width:780px;
+    margin:0 auto 40px;
+    color:var(--text-light);
+    font-size:18px;
+    line-height:1.9;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+
+}
+
+
+/* =========================
+   STATS
+========================= */
+
+.portfolio-stats{
+
+    max-width:1200px;
+    margin:-55px auto 90px;
+    padding:0 20px;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+
+}
+
+.portfolio-stats .stat-card{
+
+    background:#fff;
+    border-radius:20px;
+    padding:35px 20px;
+    text-align:center;
+
+    border:1px solid #E8E8E8;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+}
+
+.portfolio-stats .stat-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:var(--saffron);
+
+}
+
+.portfolio-stats h2{
+
+    font-size:42px;
+    color:var(--green);
+    margin-bottom:10px;
+
+}
+
+.portfolio-stats p{
+
+    color:var(--text-light);
+
+}
+
+
+
+/* =========================
+   PORTFOLIO SECTION
+========================= */
+
+.portfolio-page{
+
+    padding:100px 20px;
+    background:#fff;
+    text-align:center;
+
+}
+
+.portfolio-grid{
+
+    max-width:1250px;
+
+    margin:60px auto 0;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:35px;
+
+}
+/* =====================================================
+   PORTFOLIO CARDS
+===================================================== */
+
+.portfolio-card{
+
+    background:#ffffff;
+
+    border:1px solid #e8e8e8;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    display:flex;
+
+    flex-direction:column;
+
+    height:100%;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:all .35s ease;
+
+    position:relative;
+
+}
+
+.portfolio-card:hover{
+
+    transform:translateY(-12px);
+
+    border-color:var(--saffron);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.15);
+
+}
+
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.portfolio-image{
+
+    position:relative;
+
+    height:220px;
+
+    background:#ffffff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:25px;
+
+    border-bottom:1px solid #f1f1f1;
+
+    overflow:hidden;
+
+}
+
+.portfolio-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:contain;
+
+    transition:.4s;
+
+}
+
+.portfolio-card:hover .portfolio-image img{
+
+    transform:scale(1.06);
+
+}
+
+
+
+/* =========================
+   CATEGORY BADGE
+========================= */
+
+.portfolio-badge{
+
+    position:absolute;
+
+    top:15px;
+
+    left:15px;
+
+    background:var(--green);
+
+    color:#fff;
+
+    padding:7px 16px;
+
+    border-radius:30px;
+
+    font-size:12px;
+
+    font-weight:600;
+
+    letter-spacing:.3px;
+
+    transition:.3s;
+
+}
+
+.portfolio-card:hover .portfolio-badge{
+
+    background:var(--saffron);
+
+}
+
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.portfolio-content{
+
+    padding:28px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    flex:1;
+
+}
+
+.portfolio-content h3{
+
+    color:var(--green-dark);
+
+    font-size:24px;
+
+    margin-bottom:12px;
+
+    line-height:1.35;
+
+    min-height:65px;
+
+    transition:.3s;
+
+}
+
+.portfolio-card:hover .portfolio-content h3{
+
+    color:var(--saffron);
+
+}
+
+.portfolio-content p{
+
+    color:var(--text-light);
+
+    line-height:1.8;
+
+    font-size:15px;
+
+    flex:1;
+
+}
+
+
+
+/* =========================
+   VIEW PROJECT BUTTON
+========================= */
+
+.portfolio-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin-top:20px;
+
+    color:var(--green);
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.portfolio-btn i{
+
+    transition:.3s;
+
+}
+
+.portfolio-btn:hover{
+
+    color:var(--saffron);
+
+}
+
+.portfolio-btn:hover i{
+
+    transform:translateX(6px);
+
+}
+/* =====================================================
+   WHY CHOOSE US
+===================================================== */
+
+.portfolio-why{
+
+    padding:110px 20px;
+
+    background:var(--green-light);
+
+    text-align:center;
+
+}
+
+.portfolio-why-grid{
+
+    max-width:1200px;
+
+    margin:60px auto 0;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+}
+
+.portfolio-why-card{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:40px 30px;
+
+    border:1px solid #e8e8e8;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+}
+
+.portfolio-why-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:var(--saffron);
+
+}
+
+.portfolio-why-card i{
+
+    font-size:42px;
+
+    color:var(--green);
+
+    margin-bottom:20px;
+
+    transition:.35s;
+
+}
+
+.portfolio-why-card:hover i{
+
+    color:var(--saffron);
+
+    transform:scale(1.1);
+
+}
+
+.portfolio-why-card h3{
+
+    color:var(--green-dark);
+
+    margin-bottom:15px;
+
+    font-size:24px;
+
+}
+
+.portfolio-why-card p{
+
+    color:var(--text-light);
+
+    line-height:1.8;
+
+}
+
+
+
+/* =====================================================
+   ACHIEVEMENTS
+===================================================== */
+
+.portfolio-achievements{
+
+    max-width:1200px;
+
+    margin:100px auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+    padding:0 20px;
+
+}
+
+.achievement-card{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    border:1px solid #e8e8e8;
+
+    padding:40px 25px;
+
+    text-align:center;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+}
+
+.achievement-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:var(--saffron);
+
+}
+
+.achievement-card i{
+
+    font-size:45px;
+
+    color:var(--green);
+
+    margin-bottom:20px;
+
+}
+
+.achievement-card:hover i{
+
+    color:var(--saffron);
+
+}
+
+.achievement-card h2{
+
+    color:var(--green-dark);
+
+    font-size:42px;
+
+    margin-bottom:10px;
+
+}
+
+.achievement-card p{
+
+    color:var(--text-light);
+
+}
+
+
+
+/* =====================================================
+   CTA
+===================================================== */
+
+.portfolio-cta{
+
+    background:linear-gradient(135deg,#EAF6EE,#ffffff);
+
+    text-align:center;
+
+    padding:120px 20px;
+
+}
+
+.portfolio-cta h2{
+
+    max-width:800px;
+
+    margin:20px auto;
+
+}
+
+.portfolio-cta p{
+
+    max-width:720px;
+
+    margin:0 auto 40px;
+
+    color:var(--text-light);
+
+    line-height:1.9;
+
+    font-size:18px;
+
+}
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width:1200px){
+
+    .portfolio-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media (max-width:992px){
+
+    .portfolio-hero{
+
+        padding:100px 20px;
+
+    }
+
+    .portfolio-hero h1{
+
+        font-size:50px;
+
+    }
+
+    .portfolio-stats{
+
+        grid-template-columns:repeat(2,1fr);
+
+        margin:50px auto;
+
+    }
+
+    .portfolio-why-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .portfolio-achievements{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .portfolio-hero{
+
+        padding:90px 20px;
+
+    }
+
+    .portfolio-hero h1{
+
+        font-size:40px;
+
+        line-height:1.3;
+
+    }
+
+    .portfolio-hero p{
+
+        font-size:17px;
+
+    }
+
+    .portfolio-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .portfolio-stats{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .portfolio-why-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .portfolio-achievements{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .portfolio-card{
+
+        max-width:500px;
+
+        width:100%;
+
+        margin:auto;
+
+    }
+
+    .portfolio-image{
+
+        height:200px;
+
+        padding:20px;
+
+    }
+
+}
+
+@media (max-width:480px){
+
+    .portfolio-hero h1{
+
+        font-size:32px;
+
+    }
+
+    .portfolio-content{
+
+        padding:22px;
+
+    }
+
+    .portfolio-content h3{
+
+        font-size:20px;
+
+        min-height:auto;
+
+    }
+
+    .portfolio-content p{
+
+        font-size:15px;
+
+    }
+
+    .portfolio-image{
+
+        height:180px;
+
+    }
+
+    .portfolio-badge{
+
+        font-size:11px;
+
+        padding:6px 12px;
+
+    }
+
+}
+
+
+
+/* =====================================================
+   PREMIUM EFFECTS
+===================================================== */
+
+.portfolio-card{
+
+    cursor:pointer;
+
+}
+
+.portfolio-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:5px;
+
+    background:var(--green);
+
+    transition:.35s;
+
+}
+
+.portfolio-card:hover::before{
+
+    background:var(--saffron);
+
+}
+
+.portfolio-card:hover{
+
+    box-shadow:0 20px 45px rgba(0,0,0,.15);
+
+}
+
+.portfolio-image{
+
+    background:linear-gradient(180deg,#ffffff,#f8f8f8);
+
+}
+
+.portfolio-content{
+
+    border-top:1px solid #f2f2f2;
+
+}
+
+
+
+/* =====================================================
+   SMOOTH TRANSITIONS
+===================================================== */
+
+.portfolio-card,
+.portfolio-image img,
+.portfolio-badge,
+.portfolio-content h3,
+.portfolio-btn,
+.portfolio-why-card,
+.achievement-card{
+
+    transition:all .35s ease;
+
+}
