@@ -1,0 +1,321 @@
+<!-- ==========================================
+     NISHA AI ASSISTANT
+========================================== -->
+
+<div class="nisha-wrapper">
+
+
+    <!-- ======================================
+         NISHA GREETING
+    ====================================== -->
+
+    <div class="nisha-greeting">
+
+        <div class="nisha-greeting-title">
+
+            Hi! I'm Nisha 👋
+
+        </div>
+
+        <div class="nisha-greeting-text">
+
+            How can I help you today?
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ======================================
+         NISHA CHAT WINDOW
+    ====================================== -->
+
+    <div
+        class="nisha-chat"
+        role="dialog"
+        aria-label="Nisha AI Assistant"
+    >
+
+
+        <!-- ==================================
+             HEADER
+        ================================== -->
+
+        <div class="nisha-header">
+
+
+            <div class="nisha-profile">
+
+
+                <div class="nisha-avatar-small">
+
+                    <img
+                        src="images/nisha.png"
+                        alt="Nisha AI"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                    >
+
+                    <span class="nisha-fallback-avatar">
+
+                        <i class="fas fa-user"></i>
+
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+
+                        Nisha AI
+
+                    </h3>
+
+
+                    <div class="nisha-status">
+
+                        <span class="nisha-status-dot"></span>
+
+                        Online • CGD Media Assistant
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <button
+                type="button"
+                class="nisha-close"
+                aria-label="Close Nisha AI"
+            >
+
+                <i class="fas fa-xmark"></i>
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- ==================================
+             CHAT BODY
+        ================================== -->
+
+        <div class="nisha-body">
+
+
+            <!-- Welcome -->
+
+            <div class="nisha-message bot">
+
+                <div class="nisha-bubble">
+
+                    Hi! 👋 I'm
+                    <strong>Nisha</strong>,
+                    your AI assistant at
+                    <strong>Click Grow Digital</strong>.
+
+                    <br><br>
+
+                    I can help you with our services,
+                    Meta Ads, Google Ads, SEO,
+                    websites, branding and more.
+
+                    <br><br>
+
+                    What would you like to know?
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Quick Questions -->
+
+            <div class="nisha-quick-options">
+
+
+                <button
+                    type="button"
+                    class="nisha-quick-btn"
+                    data-message="What services do you offer?"
+                >
+
+                    Services
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="nisha-quick-btn"
+                    data-message="Tell me about Meta Ads"
+                >
+
+                    Meta Ads
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="nisha-quick-btn"
+                    data-message="Tell me about Google Ads"
+                >
+
+                    Google Ads
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="nisha-quick-btn"
+                    data-message="Tell me about SEO"
+                >
+
+                    SEO
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="nisha-quick-btn"
+                    data-message="I need a website"
+                >
+
+                    Website
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="nisha-quick-btn"
+                    data-message="I want to know the pricing"
+                >
+
+                    Pricing
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- Typing -->
+
+            <div
+                class="nisha-typing"
+                aria-label="Nisha is typing"
+            >
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ==================================
+             WHATSAPP
+        ================================== -->
+
+        <a
+            href="https://wa.me/91XXXXXXXXXX"
+            class="nisha-whatsapp"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <i class="fab fa-whatsapp"></i>
+
+            Chat With Our Team
+
+        </a>
+
+
+
+        <!-- ==================================
+             INPUT
+        ================================== -->
+
+        <div class="nisha-input-area">
+
+
+            <input
+                type="text"
+                class="nisha-input"
+                placeholder="Ask Nisha something..."
+                autocomplete="off"
+                aria-label="Ask Nisha a question"
+            >
+
+
+            <button
+                type="button"
+                class="nisha-send"
+                aria-label="Send message"
+            >
+
+                <i class="fas fa-paper-plane"></i>
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- ======================================
+         NISHA FLOATING AVATAR
+    ====================================== -->
+
+    <button
+        type="button"
+        class="nisha-launcher"
+        aria-label="Open Nisha AI"
+        aria-expanded="false"
+    >
+
+
+        <div class="nisha-avatar">
+
+            <img
+                src="images/nisha.png"
+                alt="Nisha AI"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            >
+
+            <span class="nisha-fallback-avatar">
+
+                <i class="fas fa-user"></i>
+
+            </span>
+
+        </div>
+
+
+        <span class="nisha-online"></span>
+
+
+    </button>
+
+
+</div>

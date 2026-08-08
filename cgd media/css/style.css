@@ -1,0 +1,1150 @@
+/* ==========================================
+   CLICK GROW DIGITAL
+   GLOBAL DESIGN SYSTEM
+========================================== */
+
+/* ==========================================
+   GOOGLE FONT
+========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+
+
+/* ==========================================
+   ROOT VARIABLES
+========================================== */
+
+:root{
+
+    /* Brand Colors */
+
+    --primary:#16A34A;
+    --primary-light:#22C55E;
+    --primary-dark:#15803D;
+
+    --accent:#F59E0B;
+
+    /* Background */
+
+    --background:#F8FAFC;
+
+    /* Glass */
+
+    --surface:rgba(255,255,255,.60);
+
+    --glass:rgba(255,255,255,.18);
+
+    --glass-dark:rgba(255,255,255,.08);
+
+    /* Text */
+
+    --text:#0F172A;
+
+    --text-light:#64748B;
+
+    --white:#FFFFFF;
+
+    /* Border */
+
+    --border:rgba(255,255,255,.35);
+
+    /* Radius */
+
+    --radius-sm:12px;
+
+    --radius-md:20px;
+
+    --radius-lg:32px;
+
+    /* Shadow */
+
+    --shadow-sm:0 8px 24px rgba(15,23,42,.08);
+
+    --shadow-md:0 20px 45px rgba(15,23,42,.12);
+
+    --shadow-lg:0 35px 80px rgba(15,23,42,.16);
+
+    /* Blur */
+
+    --blur:20px;
+
+    /* Container */
+
+    --container:1280px;
+
+    /* Transition */
+
+    --transition:.35s ease;
+
+}
+
+
+
+/* ==========================================
+   RESET
+========================================== */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+
+
+body{
+
+    font-family:'Plus Jakarta Sans',sans-serif;
+
+    background:var(--background);
+
+    color:var(--text);
+
+    overflow-x:hidden;
+
+    line-height:1.7;
+
+    -webkit-font-smoothing:antialiased;
+
+}
+
+
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+
+
+a{
+
+    color:inherit;
+
+    text-decoration:none;
+
+}
+
+
+
+ul{
+
+    list-style:none;
+
+}
+
+
+
+button{
+
+    border:none;
+
+    outline:none;
+
+    background:none;
+
+    cursor:pointer;
+
+    font-family:inherit;
+
+}
+
+
+
+input,
+textarea{
+
+    font-family:inherit;
+
+    outline:none;
+
+}
+
+
+
+section{
+
+    position:relative;
+
+    padding:120px 0;
+
+}
+/* ==========================================
+   CONTAINER
+========================================== */
+
+.container{
+
+    width:min(var(--container),92%);
+
+    margin:0 auto;
+
+}
+
+
+
+/* ==========================================
+   TYPOGRAPHY
+========================================== */
+
+h1{
+
+    font-size:clamp(48px,6vw,78px);
+
+    font-weight:800;
+
+    line-height:1.08;
+
+    letter-spacing:-2px;
+
+    color:var(--text);
+
+}
+
+
+
+h2{
+
+    font-size:clamp(36px,4vw,56px);
+
+    font-weight:800;
+
+    line-height:1.15;
+
+    letter-spacing:-1px;
+
+    color:var(--text);
+
+}
+
+
+
+h3{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:var(--text);
+
+}
+
+
+
+h4{
+
+    font-size:22px;
+
+    font-weight:700;
+
+    color:var(--text);
+
+}
+
+
+
+p{
+
+    font-size:18px;
+
+    color:var(--text-light);
+
+    line-height:1.9;
+
+}
+
+
+
+/* ==========================================
+   SECTION HEADER
+========================================== */
+
+.section-header{
+
+    max-width:820px;
+
+    margin:0 auto 80px;
+
+    text-align:center;
+
+}
+
+
+
+.section-tag{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:10px 20px;
+
+    margin-bottom:24px;
+
+    border-radius:50px;
+
+    background:rgba(255,255,255,.45);
+
+    backdrop-filter:blur(var(--blur));
+
+    -webkit-backdrop-filter:blur(var(--blur));
+
+    border:1px solid var(--border);
+
+    color:var(--primary);
+
+    font-size:14px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+}
+
+
+
+.section-tag::before{
+
+    content:"";
+
+    width:8px;
+
+    height:8px;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+}
+
+
+
+.section-header h2{
+
+    margin-bottom:22px;
+
+}
+
+
+
+/* ==========================================
+   TEXT UTILITIES
+========================================== */
+
+.text-center{
+
+    text-align:center;
+
+}
+
+
+
+.text-left{
+
+    text-align:left;
+
+}
+
+
+
+.text-right{
+
+    text-align:right;
+
+}
+
+
+
+.text-primary{
+
+    color:var(--primary);
+
+}
+
+
+
+.text-accent{
+
+    color:var(--accent);
+
+}
+
+
+
+/* ==========================================
+   SPACING
+========================================== */
+
+.mt-20{
+
+    margin-top:20px;
+
+}
+
+
+
+.mt-40{
+
+    margin-top:40px;
+
+}
+
+
+
+.mt-60{
+
+    margin-top:60px;
+
+}
+
+
+
+.mb-20{
+
+    margin-bottom:20px;
+
+}
+
+
+
+.mb-40{
+
+    margin-bottom:40px;
+
+}
+
+
+
+.mb-60{
+
+    margin-bottom:60px;
+
+}
+
+
+
+/* ==========================================
+   SELECTION
+========================================== */
+
+::selection{
+
+    background:var(--primary);
+
+    color:var(--white);
+
+}
+
+
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+
+
+::-webkit-scrollbar-track{
+
+    background:#EEF3F7;
+
+}
+
+
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:20px;
+
+}
+
+
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--primary-dark);
+
+}
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.btn{
+
+    position:relative;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    padding:16px 34px;
+
+    border-radius:50px;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--primary-light)
+    );
+
+    color:var(--white);
+
+    font-size:16px;
+
+    font-weight:700;
+
+    overflow:hidden;
+
+    transition:var(--transition);
+
+    box-shadow:var(--shadow-md);
+
+}
+
+.btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+
+
+.btn-outline{
+
+    position:relative;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    padding:16px 34px;
+
+    border-radius:50px;
+
+    background:rgba(255,255,255,.35);
+
+    backdrop-filter:blur(var(--blur));
+
+    -webkit-backdrop-filter:blur(var(--blur));
+
+    border:1px solid var(--border);
+
+    color:var(--text);
+
+    font-size:16px;
+
+    font-weight:700;
+
+    transition:var(--transition);
+
+}
+
+.btn-outline:hover{
+
+    background:rgba(255,255,255,.70);
+
+    transform:translateY(-4px);
+
+    box-shadow:var(--shadow-md);
+
+}
+
+
+
+/* ==========================================
+   GLASS CARD
+========================================== */
+
+.card{
+
+    position:relative;
+
+    padding:35px;
+
+    border-radius:var(--radius-lg);
+
+    background:var(--surface);
+
+    backdrop-filter:blur(var(--blur));
+
+    -webkit-backdrop-filter:blur(var(--blur));
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+    overflow:hidden;
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+
+
+/* ==========================================
+   GLASS PANEL
+========================================== */
+
+.glass{
+
+    background:var(--glass);
+
+    backdrop-filter:blur(var(--blur));
+
+    -webkit-backdrop-filter:blur(var(--blur));
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius-lg);
+
+    box-shadow:var(--shadow-md);
+
+}
+
+
+
+/* ==========================================
+   ICON BOX
+========================================== */
+
+.icon-box{
+
+    width:72px;
+
+    height:72px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:22px;
+
+    background:rgba(22,163,74,.10);
+
+    color:var(--primary);
+
+    font-size:28px;
+
+    transition:var(--transition);
+
+}
+
+.card:hover .icon-box{
+
+    background:var(--primary);
+
+    color:var(--white);
+
+    transform:rotate(-8deg) scale(1.08);
+
+}
+
+
+
+/* ==========================================
+   BADGE
+========================================== */
+
+.badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:12px 24px;
+
+    border-radius:50px;
+
+    background:rgba(255,255,255,.40);
+
+    backdrop-filter:blur(var(--blur));
+
+    -webkit-backdrop-filter:blur(var(--blur));
+
+    border:1px solid var(--border);
+
+    color:var(--text);
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+.badge:hover{
+
+    background:var(--primary);
+
+    color:var(--white);
+
+    transform:translateY(-4px);
+
+}
+
+
+
+/* ==========================================
+   IMAGE
+========================================== */
+
+.image-cover{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+
+
+/* ==========================================
+   RIPPLE EFFECT
+========================================== */
+
+.ripple{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.45);
+
+    transform:scale(0);
+
+    animation:ripple .6s linear;
+
+    pointer-events:none;
+
+}
+
+@keyframes ripple{
+
+    to{
+
+        transform:scale(4);
+
+        opacity:0;
+
+    }
+
+}
+/* ==========================================
+   HEADER
+========================================== */
+
+.site-header{
+
+    position:fixed;
+
+    top:20px;
+
+    left:0;
+
+    width:100%;
+
+    z-index:1000;
+
+    transition:var(--transition);
+
+}
+
+
+
+.navbar{
+
+    width:min(var(--container),92%);
+
+    height:80px;
+
+    margin:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 28px;
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,.28);
+
+    backdrop-filter:blur(24px);
+
+    -webkit-backdrop-filter:blur(24px);
+
+    border:1px solid rgba(255,255,255,.40);
+
+    box-shadow:var(--shadow-md);
+
+    transition:var(--transition);
+
+}
+
+
+
+.site-header.scrolled .navbar{
+
+    height:72px;
+
+    background:rgba(255,255,255,.65);
+
+    border:1px solid rgba(255,255,255,.55);
+
+}
+
+
+
+/* ==========================================
+   LOGO
+========================================== */
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+
+
+.logo img{
+
+    height:55px;
+
+    width:auto;
+
+}
+
+
+
+/* ==========================================
+   NAVIGATION
+========================================== */
+
+.nav-links{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:34px;
+
+}
+
+
+
+.nav-links a{
+
+    position:relative;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    color:var(--text);
+
+    transition:var(--transition);
+
+}
+
+
+
+.nav-links a:hover,
+
+.nav-links a.active{
+
+    color:var(--primary);
+
+}
+
+
+
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:2px;
+
+    background:var(--primary);
+
+    border-radius:50px;
+
+    transition:var(--transition);
+
+}
+
+
+
+.nav-links a:hover::after,
+
+.nav-links a.active::after{
+
+    width:100%;
+
+}
+
+
+
+/* ==========================================
+   NAV ACTIONS
+========================================== */
+
+.nav-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+
+
+/* ==========================================
+   MOBILE MENU
+========================================== */
+
+.menu-toggle{
+
+    display:none;
+
+    width:50px;
+
+    height:50px;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:16px;
+
+    background:rgba(255,255,255,.35);
+
+    backdrop-filter:blur(20px);
+
+    -webkit-backdrop-filter:blur(20px);
+
+    border:1px solid var(--border);
+
+    color:var(--primary);
+
+    font-size:22px;
+
+}
+
+
+
+/* ==========================================
+   GLOBAL ANIMATIONS
+========================================== */
+
+.fade-up{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:all .8s ease;
+
+}
+
+
+
+.fade-up.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+
+.rotate-slow{
+
+    animation:rotateSlow 30s linear infinite;
+
+}
+
+
+
+@keyframes rotateSlow{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:992px){
+
+    .nav-links{
+
+        position:absolute;
+
+        top:95px;
+
+        left:4%;
+
+        width:92%;
+
+        display:none;
+
+        flex-direction:column;
+
+        gap:22px;
+
+        padding:35px;
+
+        border-radius:24px;
+
+        background:rgba(255,255,255,.75);
+
+        backdrop-filter:blur(24px);
+
+        -webkit-backdrop-filter:blur(24px);
+
+        border:1px solid rgba(255,255,255,.45);
+
+        box-shadow:var(--shadow-lg);
+
+    }
+
+    .nav-links.show{
+
+        display:flex;
+
+    }
+
+    .menu-toggle{
+
+        display:flex;
+
+    }
+
+    .navbar{
+
+        height:74px;
+
+    }
+
+}
+
+
+
+@media(max-width:768px){
+
+    section{
+
+        padding:90px 0;
+
+    }
+
+}
+
+
+
+@media(max-width:480px){
+
+    .navbar{
+
+        padding:0 18px;
+
+    }
+
+    .logo img{
+
+        height:46px;
+
+    }
+
+    .btn,
+
+    .btn-outline{
+
+        width:100%;
+
+        justify-content:center;
+
+    }
+
+}
