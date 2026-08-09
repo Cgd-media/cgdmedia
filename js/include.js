@@ -123,6 +123,10 @@ async function loadNisha() {
             )
         ) {
 
+            console.log(
+                "Nisha already loaded."
+            );
+
             return;
 
         }
@@ -150,23 +154,32 @@ async function loadNisha() {
 
 
         /* --------------------------------------
-           CREATE CONTAINER
+           CREATE NISHA WRAPPER
         -------------------------------------- */
 
-        const container =
+        const wrapper =
             document.createElement("div");
 
 
-        container.id =
+        wrapper.className =
+            "nisha-wrapper";
+
+
+        wrapper.id =
             "nisha-container";
 
 
-        container.innerHTML =
+        wrapper.innerHTML =
             nishaHTML;
 
 
         document.body.appendChild(
-            container
+            wrapper
+        );
+
+
+        console.log(
+            "Nisha HTML loaded successfully."
         );
 
 
@@ -176,7 +189,7 @@ async function loadNisha() {
 
         if (
             !document.querySelector(
-                'link[href="css/nisha.css"]'
+                'link[data-nisha-css="true"]'
             )
         ) {
 
@@ -192,8 +205,17 @@ async function loadNisha() {
                 "css/nisha.css";
 
 
+            nishaCSS.dataset.nishaCss =
+                "true";
+
+
             document.head.appendChild(
                 nishaCSS
+            );
+
+
+            console.log(
+                "nisha.css loaded successfully."
             );
 
         }
@@ -205,7 +227,7 @@ async function loadNisha() {
 
         if (
             !document.querySelector(
-                'script[src="js/nisha.js"]'
+                'script[data-nisha-js="true"]'
             )
         ) {
 
@@ -215,6 +237,10 @@ async function loadNisha() {
 
             nishaJS.src =
                 "js/nisha.js";
+
+
+            nishaJS.dataset.nishaJs =
+                "true";
 
 
             nishaJS.onload = () => {
@@ -406,6 +432,7 @@ function initMobileMenu() {
                     "fa-bars"
                 );
 
+
                 icon.classList.add(
                     "fa-xmark"
                 );
@@ -417,6 +444,7 @@ function initMobileMenu() {
                 icon.classList.remove(
                     "fa-xmark"
                 );
+
 
                 icon.classList.add(
                     "fa-bars"
