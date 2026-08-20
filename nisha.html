@@ -1,416 +1,338 @@
 <!-- ======================================
-     NISHA AI — GREETING
+     NISHA AI — SYSTEMATIC GROWTH ASSISTANT
+     Replace your old Nisha HTML with this file.
+     JavaScript is included at the bottom.
 ====================================== -->
 
-<div class="nisha-greeting">
-
-    <div class="nisha-greeting-title">
-        Hi! I'm Nisha <span aria-hidden="true">👋</span>
-    </div>
-
-    <div class="nisha-greeting-text">
-        Your digital growth assistant at CGD Media.
-    </div>
-
+<!-- GREETING -->
+<div class="nisha-greeting" aria-live="polite">
+    <span class="nisha-greeting-dot"></span>
+    <span>Need help growing your business?</span>
 </div>
 
 
 <!-- ======================================
-     NISHA AI — CHAT WINDOW
+     CHAT WINDOW
 ====================================== -->
 
-<div
-    class="nisha-chat"
-    role="dialog"
-    aria-label="Nisha AI Assistant"
-    aria-modal="false"
->
+<div class="nisha-chat" role="dialog" aria-label="Nisha AI Assistant" aria-modal="false">
 
-
-    <!-- ==================================
-         HEADER
-    ================================== -->
-
+    <!-- HEADER -->
     <div class="nisha-header">
 
         <div class="nisha-profile">
 
             <div class="nisha-avatar-small">
-
                 <img
                     src="images/nisha.png"
-                    alt="Nisha AI"
-                    loading="lazy"
+                    alt="Nisha AI - CGD Media Digital Growth Assistant"
                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
                 >
-
-                <span
-                    class="nisha-fallback-avatar"
-                    aria-hidden="true"
-                >
+                <span class="nisha-fallback-avatar" aria-hidden="true">
                     <i class="fas fa-sparkles"></i>
                 </span>
-
             </div>
 
-
             <div class="nisha-profile-info">
-
-                <h3>
-                    Nisha AI
-                </h3>
-
+                <h3>Nisha AI</h3>
                 <div class="nisha-status">
-
                     <span class="nisha-status-dot"></span>
-
-                    <span>
-                        Online • CGD Media Assistant
-                    </span>
-
+                    <span>Digital Growth Assistant</span>
                 </div>
-
             </div>
 
         </div>
 
-
-        <button
-            type="button"
-            class="nisha-close"
-            aria-label="Close Nisha AI"
-        >
-
+        <button type="button" class="nisha-close" aria-label="Close Nisha AI">
             <i class="fas fa-xmark"></i>
-
         </button>
 
     </div>
 
 
+    <!-- PROGRESS -->
+    <div class="nisha-progress-wrap">
+        <div class="nisha-progress-top">
+            <span class="nisha-step-label">Let's understand your goals</span>
+            <span class="nisha-step-count">Step <b id="nisha-step-number">1</b> of 3</span>
+        </div>
+        <div class="nisha-progress">
+            <span id="nisha-progress-bar"></span>
+        </div>
+    </div>
 
-    <!-- ==================================
-         CHAT BODY
-    ================================== -->
 
-    <div
-        class="nisha-body"
-        aria-live="polite"
-        aria-atomic="false"
-    >
+    <!-- CHAT BODY -->
+    <div class="nisha-body" id="nisha-body" aria-live="polite">
 
+        <!-- STEP 1 -->
+        <section class="nisha-step active" data-step="1">
 
-        <!-- ==================================
-             WELCOME MESSAGE
-        ================================== -->
-
-        <div class="nisha-message bot">
-
-            <div class="nisha-bubble">
-
-                <span class="nisha-bubble-eyebrow">
-                    CGD MEDIA • DIGITAL GROWTH
-                </span>
-
-                <div class="nisha-welcome-title">
-                    Hi! I'm <strong>Nisha</strong> 👋
+            <div class="nisha-message bot">
+                <div class="nisha-bubble">
+                    <span class="nisha-bubble-eyebrow">CGD MEDIA • AI ASSISTANT</span>
+                    <div class="nisha-welcome-title">
+                        Hi, I'm <strong>Nisha</strong> <span>👋</span>
+                    </div>
+                    <p>
+                        I'll ask you a few quick questions and help identify
+                        the right digital solution for your business.
+                    </p>
                 </div>
+            </div>
 
-                <p>
-                    I’m here to understand your business and help you
-                    find the right digital solution.
-                </p>
+            <div class="nisha-question">
+                <span class="nisha-question-number">01</span>
+                <div>
+                    <h4>What best describes your business?</h4>
+                    <p>Choose the option closest to you.</p>
+                </div>
+            </div>
 
-                <p>
-                    Tell me a little about your business or what you're
-                    trying to achieve — I'll guide you from there.
-                </p>
+            <div class="nisha-options nisha-business-options">
+
+                <button type="button" class="nisha-option" data-business="Local Business">
+                    <span class="nisha-option-icon"><i class="fas fa-store"></i></span>
+                    <span>
+                        <strong>Local Business</strong>
+                        <small>Store, clinic, restaurant or local service</small>
+                    </span>
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+                <button type="button" class="nisha-option" data-business="Service Business">
+                    <span class="nisha-option-icon"><i class="fas fa-briefcase"></i></span>
+                    <span>
+                        <strong>Service Business</strong>
+                        <small>Professional, agency or service provider</small>
+                    </span>
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+                <button type="button" class="nisha-option" data-business="E-commerce / Product Brand">
+                    <span class="nisha-option-icon"><i class="fas fa-bag-shopping"></i></span>
+                    <span>
+                        <strong>Product or E-commerce</strong>
+                        <small>I sell products online or offline</small>
+                    </span>
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+                <button type="button" class="nisha-option" data-business="Personal Brand / Other">
+                    <span class="nisha-option-icon"><i class="fas fa-user-astronaut"></i></span>
+                    <span>
+                        <strong>Personal Brand / Other</strong>
+                        <small>Creator, professional or something different</small>
+                    </span>
+                    <i class="fas fa-chevron-right"></i>
+                </button>
 
             </div>
 
-        </div>
+        </section>
 
 
+        <!-- STEP 2 -->
+        <section class="nisha-step" data-step="2">
 
-        <!-- ==================================
-             CONVERSATION STARTERS
-        ================================== -->
+            <div class="nisha-message bot compact">
+                <div class="nisha-bubble">
+                    <div class="nisha-bubble-title">Great choice <span>✦</span></div>
+                    <p>Now let's understand what you want to achieve.</p>
+                </div>
+            </div>
 
-        <div class="nisha-quick-options">
+            <div class="nisha-question">
+                <span class="nisha-question-number">02</span>
+                <div>
+                    <h4>What's your main goal right now?</h4>
+                    <p>Select the outcome that matters most.</p>
+                </div>
+            </div>
 
-            <button
-                type="button"
-                class="nisha-quick-btn"
-                data-message="I want to grow my business online"
-            >
-                <span class="nisha-quick-icon">
-                    <i class="fas fa-arrow-trend-up"></i>
-                </span>
+            <div class="nisha-options nisha-goal-options">
 
-                <span class="nisha-quick-content">
-                    <strong>
-                        Grow My Business
-                    </strong>
+                <button type="button" class="nisha-option" data-goal="More Leads & Enquiries">
+                    <span class="nisha-option-icon"><i class="fas fa-bullseye"></i></span>
+                    <span><strong>More Leads</strong><small>I want more customer enquiries</small></span>
+                    <i class="fas fa-chevron-right"></i>
+                </button>
 
-                    <small>
-                        I want more customers online
-                    </small>
-                </span>
+                <button type="button" class="nisha-option" data-goal="Build Online Presence">
+                    <span class="nisha-option-icon"><i class="fas fa-globe"></i></span>
+                    <span><strong>Online Presence</strong><small>Website, Google & social visibility</small></span>
+                    <i class="fas fa-chevron-right"></i>
+                </button>
 
-                <i class="fas fa-arrow-right nisha-quick-arrow"></i>
+                <button type="button" class="nisha-option" data-goal="Brand Awareness">
+                    <span class="nisha-option-icon"><i class="fas fa-wand-magic-sparkles"></i></span>
+                    <span><strong>Build My Brand</strong><small>Branding, content & recognition</small></span>
+                    <i class="fas fa-chevron-right"></i>
+                </button>
 
+                <button type="button" class="nisha-option" data-goal="More Sales">
+                    <span class="nisha-option-icon"><i class="fas fa-arrow-trend-up"></i></span>
+                    <span><strong>Increase Sales</strong><small>Reach more customers and convert</small></span>
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+            </div>
+
+            <button type="button" class="nisha-back">
+                <i class="fas fa-arrow-left"></i> Back
             </button>
 
+        </section>
 
-            <button
-                type="button"
-                class="nisha-quick-btn"
-                data-message="I need help with my digital presence"
-            >
-                <span class="nisha-quick-icon">
-                    <i class="fas fa-globe"></i>
-                </span>
 
-                <span class="nisha-quick-content">
-                    <strong>
-                        Improve My Online Presence
-                    </strong>
+        <!-- STEP 3 -->
+        <section class="nisha-step" data-step="3">
 
-                    <small>
-                        Website, social media & visibility
-                    </small>
-                </span>
+            <div class="nisha-message bot compact">
+                <div class="nisha-bubble">
+                    <div class="nisha-bubble-title">Almost there <span>🚀</span></div>
+                    <p>One last thing so I can make a better recommendation.</p>
+                </div>
+            </div>
 
-                <i class="fas fa-arrow-right nisha-quick-arrow"></i>
+            <div class="nisha-question">
+                <span class="nisha-question-number">03</span>
+                <div>
+                    <h4>What do you need help with?</h4>
+                    <p>You can choose the biggest challenge.</p>
+                </div>
+            </div>
 
+            <div class="nisha-options nisha-challenge-options">
+
+                <button type="button" class="nisha-option" data-challenge="Marketing & Advertising">
+                    <span class="nisha-option-icon"><i class="fas fa-rectangle-ad"></i></span>
+                    <span><strong>Marketing & Ads</strong><small>Reach the right customers</small></span>
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+                <button type="button" class="nisha-option" data-challenge="Website & SEO">
+                    <span class="nisha-option-icon"><i class="fas fa-laptop-code"></i></span>
+                    <span><strong>Website & SEO</strong><small>Improve my online visibility</small></span>
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+                <button type="button" class="nisha-option" data-challenge="Social Media & Content">
+                    <span class="nisha-option-icon"><i class="fas fa-photo-film"></i></span>
+                    <span><strong>Social Media & Content</strong><small>Content, reels and audience growth</small></span>
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+                <button type="button" class="nisha-option" data-challenge="Complete Digital Growth">
+                    <span class="nisha-option-icon"><i class="fas fa-chart-line"></i></span>
+                    <span><strong>Complete Digital Growth</strong><small>I need an overall strategy</small></span>
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+            </div>
+
+            <button type="button" class="nisha-back">
+                <i class="fas fa-arrow-left"></i> Back
             </button>
 
-
-            <button
-                type="button"
-                class="nisha-quick-btn"
-                data-message="I need more leads and enquiries"
-            >
-                <span class="nisha-quick-icon">
-                    <i class="fas fa-bullseye"></i>
-                </span>
-
-                <span class="nisha-quick-content">
-                    <strong>
-                        Get More Leads
-                    </strong>
-
-                    <small>
-                        Ads, leads & customer enquiries
-                    </small>
-                </span>
-
-                <i class="fas fa-arrow-right nisha-quick-arrow"></i>
-
-            </button>
+        </section>
 
 
-            <button
-                type="button"
-                class="nisha-quick-btn"
-                data-message="I need a website or want to improve my website"
-            >
-                <span class="nisha-quick-icon">
-                    <i class="fas fa-laptop-code"></i>
-                </span>
+        <!-- RESULT -->
+        <section class="nisha-step nisha-result" data-step="4">
 
-                <span class="nisha-quick-content">
-                    <strong>
-                        Website
-                    </strong>
+            <div class="nisha-message bot">
+                <div class="nisha-bubble nisha-result-intro">
+                    <span class="nisha-bubble-eyebrow">YOUR GROWTH PLAN</span>
+                    <div class="nisha-welcome-title">
+                        Here's where I'd start <span>✨</span>
+                    </div>
+                    <p id="nisha-result-summary">
+                        Based on your answers, these are the services that may be the best fit for you.
+                    </p>
+                </div>
+            </div>
 
-                    <small>
-                        Build or improve my website
-                    </small>
-                </span>
+            <div class="nisha-recommendation">
+                <div class="nisha-recommendation-head">
+                    <span><i class="fas fa-sparkles"></i></span>
+                    <div>
+                        <small>NISHA'S RECOMMENDATION</small>
+                        <h4>Recommended for your goals</h4>
+                    </div>
+                </div>
 
-                <i class="fas fa-arrow-right nisha-quick-arrow"></i>
+                <div class="nisha-services-result" id="nisha-services-result"></div>
+            </div>
 
-            </button>
+            <div class="nisha-next-step">
+                <div>
+                    <span class="nisha-next-icon"><i class="fas fa-comments"></i></span>
+                    <div>
+                        <strong>Want a personalised strategy?</strong>
+                        <small>Our team can discuss your business and requirements.</small>
+                    </div>
+                </div>
 
+                <a
+                    href="https://wa.me/917569798676?text=Hi%20CGD%20Media%2C%20I%20just%20used%20Nisha%20AI%20and%20would%20like%20to%20discuss%20my%20business."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="nisha-whatsapp"
+                >
+                    <i class="fab fa-whatsapp"></i>
+                    <span>Continue on WhatsApp</span>
+                </a>
+            </div>
 
-            <button
-                type="button"
-                class="nisha-quick-btn"
-                data-message="I need help with branding and social media"
-            >
-                <span class="nisha-quick-icon">
-                    <i class="fas fa-wand-magic-sparkles"></i>
-                </span>
+            <div class="nisha-result-actions">
+                <button type="button" class="nisha-restart">
+                    <i class="fas fa-rotate-right"></i>
+                    Start Again
+                </button>
 
-                <span class="nisha-quick-content">
-                    <strong>
-                        Build My Brand
-                    </strong>
+                <a href="contact.html" class="nisha-contact-link">
+                    Contact CGD Media <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
 
-                    <small>
-                        Branding, content & social media
-                    </small>
-                </span>
+        </section>
 
-                <i class="fas fa-arrow-right nisha-quick-arrow"></i>
-
-            </button>
-
-
-            <button
-                type="button"
-                class="nisha-quick-btn"
-                data-message="I want to discuss pricing and packages"
-            >
-                <span class="nisha-quick-icon">
-                    <i class="fas fa-tags"></i>
-                </span>
-
-                <span class="nisha-quick-content">
-                    <strong>
-                        Pricing & Packages
-                    </strong>
-
-                    <small>
-                        Let's discuss what you need
-                    </small>
-                </span>
-
-                <i class="fas fa-arrow-right nisha-quick-arrow"></i>
-
-            </button>
-
-        </div>
-
-
-
-        <!-- ==================================
-             CONVERSATION NOTE
-        ================================== -->
-
-        <div class="nisha-conversation-note">
-
-            <i class="fas fa-shield-halved"></i>
-
-            <span>
-                Nisha asks a few questions before recommending a solution.
-            </span>
-
-        </div>
-
-
-
-        <!-- ==================================
-             TYPING INDICATOR
-        ================================== -->
-
-        <div
-            class="nisha-typing"
-            aria-label="Nisha is typing"
-            aria-hidden="true"
-        >
-
-            <span></span>
-            <span></span>
-            <span></span>
-
+        <!-- TYPING INDICATOR -->
+        <div class="nisha-typing" aria-hidden="true">
+            <span></span><span></span><span></span>
         </div>
 
     </div>
 
 
-
-    <!-- ==================================
-         WHATSAPP CTA
-    ================================== -->
-
-    <a
-        href="https://wa.me/917569798676"
-        class="nisha-whatsapp"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Chat with CGD Media team on WhatsApp"
-    >
-
-        <span class="nisha-whatsapp-icon">
-
-            <i class="fab fa-whatsapp"></i>
-
-        </span>
-
-        <span class="nisha-whatsapp-text">
-
-            <strong>
-                Talk to our team
-            </strong>
-
-            <small>
-                WhatsApp
-            </small>
-
-        </span>
-
-        <i class="fas fa-arrow-up-right-from-square nisha-whatsapp-arrow"></i>
-
-    </a>
-
-
-
-    <!-- ==================================
-         INPUT AREA
-    ================================== -->
-
+    <!-- CUSTOM INPUT -->
     <div class="nisha-input-area">
-
         <div class="nisha-input-wrapper">
-
             <input
                 type="text"
                 class="nisha-input"
-                placeholder="Tell Nisha about your business..."
+                placeholder="Or tell Nisha what you need..."
                 autocomplete="off"
                 maxlength="500"
-                aria-label="Ask Nisha a question"
+                aria-label="Tell Nisha about your business"
             >
-
-            <button
-                type="button"
-                class="nisha-send"
-                aria-label="Send message"
-            >
-
+            <button type="button" class="nisha-send" aria-label="Send message">
                 <i class="fas fa-paper-plane"></i>
-
             </button>
-
         </div>
 
         <div class="nisha-input-hint">
-
-            <span>
-                Nisha AI
-            </span>
-
-            <span>
-                •
-            </span>
-
-            <span>
-                Digital Growth Assistant
-            </span>
-
+            <i class="fas fa-lock"></i>
+            <span>Start with the questions above or tell Nisha directly.</span>
         </div>
-
     </div>
-
 
 </div>
 
 
-
 <!-- ======================================
-     NISHA FLOATING LAUNCHER
+     FLOATING LAUNCHER
 ====================================== -->
 
 <button
@@ -419,38 +341,243 @@
     aria-label="Open Nisha AI"
     aria-expanded="false"
 >
-
-
     <div class="nisha-avatar">
-
         <img
             src="images/nisha.png"
             alt="Nisha AI"
-            loading="lazy"
             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
         >
-
-        <span
-            class="nisha-fallback-avatar"
-            aria-hidden="true"
-        >
-
+        <span class="nisha-fallback-avatar" aria-hidden="true">
             <i class="fas fa-sparkles"></i>
-
         </span>
-
     </div>
 
-
-    <span
-        class="nisha-online"
-        aria-hidden="true"
-    ></span>
-
+    <span class="nisha-online" aria-hidden="true"></span>
 
     <span class="nisha-launcher-label">
         Ask Nisha
+        <small>AI Growth Assistant</small>
     </span>
-
-
 </button>
+
+
+<!-- ======================================
+     NISHA AI INTERACTION SCRIPT
+====================================== -->
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const launcher = document.querySelector(".nisha-launcher");
+    const chat = document.querySelector(".nisha-chat");
+    const closeBtn = document.querySelector(".nisha-close");
+    const greeting = document.querySelector(".nisha-greeting");
+    const steps = document.querySelectorAll(".nisha-step");
+    const progress = document.getElementById("nisha-progress-bar");
+    const stepNumber = document.getElementById("nisha-step-number");
+    const stepCount = document.querySelector(".nisha-step-count");
+    const body = document.getElementById("nisha-body");
+    const typing = document.querySelector(".nisha-typing");
+    const resultServices = document.getElementById("nisha-services-result");
+    const resultSummary = document.getElementById("nisha-result-summary");
+
+    const answers = {
+        business: "",
+        goal: "",
+        challenge: ""
+    };
+
+    let currentStep = 1;
+
+    const recommendations = {
+        "More Leads & Enquiries": [
+            ["Meta & Google Ads", "Target the right audience and generate quality enquiries.", "fa-bullseye"],
+            ["Landing Pages", "Convert ad traffic into calls, leads and enquiries.", "fa-file-lines"],
+            ["Lead Generation Strategy", "Build a clear system to attract and capture prospects.", "fa-filter-circle-dollar"]
+        ],
+        "Build Online Presence": [
+            ["Website Development", "Build a professional website that represents your business.", "fa-laptop-code"],
+            ["SEO & Local SEO", "Improve visibility when customers search online.", "fa-magnifying-glass-chart"],
+            ["Social Media Marketing", "Build a consistent and credible digital presence.", "fa-hashtag"]
+        ],
+        "Brand Awareness": [
+            ["Branding & Design", "Create a clear and memorable visual identity.", "fa-pen-ruler"],
+            ["Content Creation", "Create content that communicates your brand story.", "fa-wand-magic-sparkles"],
+            ["Social Media Marketing", "Build recognition through consistent communication.", "fa-share-nodes"]
+        ],
+        "More Sales": [
+            ["Performance Marketing", "Use targeted campaigns to reach high-intent customers.", "fa-chart-line"],
+            ["Creative Content", "Use stronger creatives and messaging to improve conversion.", "fa-photo-film"],
+            ["Conversion-Focused Website", "Make it easier for visitors to take action.", "fa-arrow-pointer"]
+        ]
+    };
+
+    function updateProgress(step) {
+        if (step === 4) {
+            progress.style.width = "100%";
+            stepNumber.textContent = "Done";
+            stepCount.classList.add("done");
+            return;
+        }
+
+        stepCount.classList.remove("done");
+        stepNumber.textContent = step;
+        progress.style.width = ((step / 3) * 100) + "%";
+    }
+
+    function showStep(step) {
+        currentStep = step;
+
+        steps.forEach(item => item.classList.remove("active"));
+
+        if (step === 4) {
+            typing.classList.add("show");
+
+            setTimeout(() => {
+                typing.classList.remove("show");
+                document.querySelector('.nisha-step[data-step="4"]').classList.add("active");
+                buildRecommendation();
+                updateProgress(4);
+                body.scrollTop = 0;
+            }, 650);
+
+            return;
+        }
+
+        document.querySelector(`.nisha-step[data-step="${step}"]`).classList.add("active");
+        updateProgress(step);
+        body.scrollTop = 0;
+    }
+
+    function selectOption(button, type) {
+        document.querySelectorAll(`[data-${type}]`).forEach(item => item.classList.remove("selected"));
+        button.classList.add("selected");
+
+        answers[type] = button.dataset[type];
+
+        setTimeout(() => {
+            showStep(currentStep + 1);
+        }, 280);
+    }
+
+    document.querySelectorAll("[data-business]").forEach(button => {
+        button.addEventListener("click", () => selectOption(button, "business"));
+    });
+
+    document.querySelectorAll("[data-goal]").forEach(button => {
+        button.addEventListener("click", () => selectOption(button, "goal"));
+    });
+
+    document.querySelectorAll("[data-challenge]").forEach(button => {
+        button.addEventListener("click", () => selectOption(button, "challenge"));
+    });
+
+    document.querySelectorAll(".nisha-back").forEach(button => {
+        button.addEventListener("click", () => {
+            showStep(Math.max(1, currentStep - 1));
+        });
+    });
+
+    function buildRecommendation() {
+        const list = recommendations[answers.goal] || recommendations["Build Online Presence"];
+
+        resultSummary.textContent =
+            `For a ${answers.business || "business"} focused on ${answers.goal || "digital growth"}, ` +
+            `I would start with a focused strategy around ${answers.challenge || "your biggest challenge"}.`;
+
+        resultServices.innerHTML = "";
+
+        list.forEach((service, index) => {
+            resultServices.insertAdjacentHTML("beforeend", `
+                <div class="nisha-service-result">
+                    <span class="nisha-service-number">0${index + 1}</span>
+                    <span class="nisha-service-icon"><i class="fas ${service[2]}"></i></span>
+                    <div>
+                        <strong>${service[0]}</strong>
+                        <p>${service[1]}</p>
+                    </div>
+                </div>
+            `);
+        });
+    }
+
+    document.querySelector(".nisha-restart").addEventListener("click", () => {
+        answers.business = "";
+        answers.goal = "";
+        answers.challenge = "";
+
+        document.querySelectorAll(".nisha-option").forEach(item => item.classList.remove("selected"));
+        showStep(1);
+    });
+
+    function openChat() {
+        chat.classList.add("active");
+        launcher.classList.add("active");
+        launcher.setAttribute("aria-expanded", "true");
+        greeting.classList.add("hide");
+    }
+
+    function closeChat() {
+        chat.classList.remove("active");
+        launcher.classList.remove("active");
+        launcher.setAttribute("aria-expanded", "false");
+        greeting.classList.remove("hide");
+    }
+
+    launcher.addEventListener("click", () => {
+        chat.classList.contains("active") ? closeChat() : openChat();
+    });
+
+    closeBtn.addEventListener("click", closeChat);
+
+    const input = document.querySelector(".nisha-input");
+    const send = document.querySelector(".nisha-send");
+
+    function sendCustomMessage() {
+        const message = input.value.trim();
+        if (!message) return;
+
+        const activeStep = document.querySelector(".nisha-step.active");
+
+        activeStep.insertAdjacentHTML("beforeend", `
+            <div class="nisha-message user">
+                <div class="nisha-user-bubble">${message.replace(/[<>&]/g, "")}</div>
+            </div>
+        `);
+
+        input.value = "";
+
+        typing.classList.add("show");
+
+        setTimeout(() => {
+            typing.classList.remove("show");
+
+            activeStep.insertAdjacentHTML("beforeend", `
+                <div class="nisha-message bot nisha-direct-reply">
+                    <div class="nisha-bubble">
+                        <div class="nisha-bubble-title">Thanks for sharing <span>✨</span></div>
+                        <p>
+                            I understand. To give you a more useful recommendation,
+                            you can continue with the quick questions above or discuss
+                            your requirements directly with the CGD Media team.
+                        </p>
+                    </div>
+                </div>
+            `);
+
+            body.scrollTop = body.scrollHeight;
+        }, 600);
+
+        body.scrollTop = body.scrollHeight;
+    }
+
+    send.addEventListener("click", sendCustomMessage);
+
+    input.addEventListener("keydown", event => {
+        if (event.key === "Enter") sendCustomMessage();
+    });
+
+    updateProgress(1);
+
+});
+</script>

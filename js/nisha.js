@@ -1,7 +1,7 @@
 /* =========================================================
-   CGD MEDIA — NISHA AI
-   PREMIUM BUSINESS CONSULTANT VERSION
-   ========================================================= */
+   NISHA AI
+   CGD MEDIA DIGITAL GROWTH ASSISTANT
+========================================================= */
 
 (function () {
 
@@ -9,56 +9,121 @@
 
 
     /* =====================================================
-       CONFIG
+       STATE
     ===================================================== */
 
-    const CONFIG = {
-
-        whatsapp: "917569798676",
-
-        email: "clickgrowthdigitalofficial@gmail.com",
-
-        servicesPage: "services.html",
-
-        portfolioPage: "portfolio.html",
-
-        contactPage: "contact.html"
-
-    };
-
-
-    /* =====================================================
-       NISHA STATE
-       Keeps track of the conversation
-    ===================================================== */
-
-    const state = {
-
-        initialized: false,
-
+    const answers = {
         business: "",
-
         goal: "",
+        challenge: ""
+    };
 
-        challenge: "",
+    let currentStep = 1;
+    let initialized = false;
 
-        service: "",
 
-        askedBusiness: false,
+    /* =====================================================
+       RECOMMENDATIONS
+    ===================================================== */
 
-        askedGoal: false,
+    const recommendations = {
 
-        askedChallenge: false,
+        "More Leads & Enquiries": [
 
-        recommendationGiven: false,
+            {
+                title: "Meta & Google Ads",
+                description: "Target the right audience and generate quality enquiries.",
+                icon: "fa-bullseye"
+            },
 
-        leadStarted: false
+            {
+                title: "Landing Pages",
+                description: "Convert ad traffic into calls, leads and enquiries.",
+                icon: "fa-file-lines"
+            },
+
+            {
+                title: "Lead Generation Strategy",
+                description: "Build a clear system to attract and capture prospects.",
+                icon: "fa-filter-circle-dollar"
+            }
+
+        ],
+
+
+        "Build Online Presence": [
+
+            {
+                title: "Website Development",
+                description: "Build a professional website that represents your business.",
+                icon: "fa-laptop-code"
+            },
+
+            {
+                title: "SEO & Local SEO",
+                description: "Improve visibility when customers search online.",
+                icon: "fa-magnifying-glass-chart"
+            },
+
+            {
+                title: "Social Media Marketing",
+                description: "Build a consistent and credible digital presence.",
+                icon: "fa-hashtag"
+            }
+
+        ],
+
+
+        "Brand Awareness": [
+
+            {
+                title: "Branding & Design",
+                description: "Create a clear and memorable visual identity.",
+                icon: "fa-pen-ruler"
+            },
+
+            {
+                title: "Content Creation",
+                description: "Create content that communicates your brand story.",
+                icon: "fa-wand-magic-sparkles"
+            },
+
+            {
+                title: "Social Media Marketing",
+                description: "Build recognition through consistent communication.",
+                icon: "fa-share-nodes"
+            }
+
+        ],
+
+
+        "More Sales": [
+
+            {
+                title: "Performance Marketing",
+                description: "Use targeted campaigns to reach high-intent customers.",
+                icon: "fa-chart-line"
+            },
+
+            {
+                title: "Creative Content",
+                description: "Use stronger creatives and messaging to improve conversion.",
+                icon: "fa-photo-film"
+            },
+
+            {
+                title: "Conversion-Focused Website",
+                description: "Make it easier for visitors to take action.",
+                icon: "fa-arrow-pointer"
+            }
+
+        ]
 
     };
 
 
     /* =====================================================
-       HELPER — GET ELEMENT
+       HELPERS
     ===================================================== */
 
     function get(selector) {
@@ -68,130 +133,26 @@
     }
 
 
-    /* =====================================================
-       INITIALIZE
-    ===================================================== */
+    function getAll(selector) {
 
-    function initNisha() {
-
-        if (state.initialized) {
-
-            return;
-
-        }
-
-
-        const chat =
-            get(".nisha-chat");
-
-
-        const launcher =
-            get(".nisha-launcher");
-
-
-        const close =
-            get(".nisha-close");
-
-
-        const input =
-            get(".nisha-input");
-
-
-        const send =
-            get(".nisha-send");
-
-
-        const body =
-            get(".nisha-body");
-
-
-        if (
-            !chat ||
-            !launcher ||
-            !close ||
-            !input ||
-            !send ||
-            !body
-        ) {
-
-            return;
-
-        }
-
-
-        state.initialized = true;
-
-
-        setupLauncher();
-
-        setupClose();
-
-        setupInput();
-
-        setupQuickButtons();
-
-        setupGreeting();
-
-
-        /*
-         * Important:
-         * HTML already contains the welcome message.
-         * We do NOT create another welcome message.
-         */
-
-        scrollToBottom();
+        return document.querySelectorAll(selector);
 
     }
 
 
-
     /* =====================================================
-       LAUNCHER
+       CHECK NISHA EXISTS
     ===================================================== */
 
-    function setupLauncher() {
+    function nishaExists() {
 
-        const launcher =
-            get(".nisha-launcher");
-
-
-        const chat =
-            get(".nisha-chat");
-
-
-        if (
-            !launcher ||
-            !chat
-        ) {
-
-            return;
-
-        }
-
-
-        launcher.addEventListener(
-            "click",
-            function () {
-
-                const isOpen =
-                    chat.classList.contains("open");
-
-
-                if (isOpen) {
-
-                    closeNisha();
-
-                } else {
-
-                    openNisha();
-
-                }
-
-            }
+        return !!(
+            get(".nisha-chat") &&
+            get(".nisha-launcher") &&
+            get("#nisha-body")
         );
 
     }
-
 
 
     /* =====================================================
@@ -200,26 +161,23 @@
 
     function openNisha() {
 
-        const chat =
-            get(".nisha-chat");
+        const chat = get(".nisha-chat");
 
+        const launcher = get(".nisha-launcher");
 
-        const launcher =
-            get(".nisha-launcher");
-
-
-        const greeting =
-            get(".nisha-greeting");
+        const greeting = get(".nisha-greeting");
 
 
         if (chat) {
 
-            chat.classList.add("open");
+            chat.classList.add("active");
 
         }
 
 
         if (launcher) {
+
+            launcher.classList.add("active");
 
             launcher.setAttribute(
                 "aria-expanded",
@@ -231,33 +189,11 @@
 
         if (greeting) {
 
-            greeting.classList.remove("show");
+            greeting.classList.add("hide");
 
         }
 
-
-        setTimeout(
-            function () {
-
-                const input =
-                    get(".nisha-input");
-
-
-                if (input) {
-
-                    input.focus();
-
-                }
-
-            },
-            250
-        );
-
-
-        scrollToBottom();
-
     }
-
 
 
     /* =====================================================
@@ -266,22 +202,23 @@
 
     function closeNisha() {
 
-        const chat =
-            get(".nisha-chat");
+        const chat = get(".nisha-chat");
 
+        const launcher = get(".nisha-launcher");
 
-        const launcher =
-            get(".nisha-launcher");
+        const greeting = get(".nisha-greeting");
 
 
         if (chat) {
 
-            chat.classList.remove("open");
+            chat.classList.remove("active");
 
         }
 
 
         if (launcher) {
+
+            launcher.classList.remove("active");
 
             launcher.setAttribute(
                 "aria-expanded",
@@ -290,793 +227,223 @@
 
         }
 
-    }
 
+        if (greeting) {
 
-
-    /* =====================================================
-       CLOSE BUTTON
-    ===================================================== */
-
-    function setupClose() {
-
-        const close =
-            get(".nisha-close");
-
-
-        if (!close) {
-
-            return;
+            greeting.classList.remove("hide");
 
         }
-
-
-        close.addEventListener(
-            "click",
-            closeNisha
-        );
 
     }
 
 
-
     /* =====================================================
-       GREETING
+       UPDATE PROGRESS
     ===================================================== */
 
-    function setupGreeting() {
+    function updateProgress(step) {
 
-        const greeting =
-            get(".nisha-greeting");
+        const progress = get("#nisha-progress-bar");
 
+        const stepNumber = get("#nisha-step-number");
 
-        if (!greeting) {
-
-            return;
-
-        }
+        const stepCount = get(".nisha-step-count");
 
 
-        setTimeout(
-            function () {
-
-                /*
-                 * Only show if chat isn't already open.
-                 */
-
-                const chat =
-                    get(".nisha-chat");
+        if (!progress) return;
 
 
-                if (
-                    chat &&
-                    !chat.classList.contains("open")
-                ) {
+        if (step === 4) {
 
-                    greeting.classList.add("show");
-
-                }
-
-            },
-            1400
-        );
+            progress.style.width = "100%";
 
 
-        setTimeout(
-            function () {
+            if (stepNumber) {
 
-                greeting.classList.remove("show");
-
-            },
-            8000
-        );
-
-    }
-
-
-
-    /* =====================================================
-       INPUT
-    ===================================================== */
-
-    function setupInput() {
-
-        const input =
-            get(".nisha-input");
-
-
-        const send =
-            get(".nisha-send");
-
-
-        if (
-            !input ||
-            !send
-        ) {
-
-            return;
-
-        }
-
-
-        send.addEventListener(
-            "click",
-            sendUserMessage
-        );
-
-
-        input.addEventListener(
-            "keydown",
-            function (event) {
-
-                if (
-                    event.key === "Enter"
-                ) {
-
-                    event.preventDefault();
-
-                    sendUserMessage();
-
-                }
+                stepNumber.textContent = "Done";
 
             }
-        );
-
-    }
 
 
+            if (stepCount) {
 
-    /* =====================================================
-       QUICK BUTTONS
-    ===================================================== */
-
-    function setupQuickButtons() {
-
-        document.addEventListener(
-            "click",
-            function (event) {
-
-                const button =
-                    event.target.closest(
-                        ".nisha-quick-btn"
-                    );
-
-
-                if (!button) {
-
-                    return;
-
-                }
-
-
-                const message =
-                    button.getAttribute(
-                        "data-message"
-                    );
-
-
-                if (!message) {
-
-                    return;
-
-                }
-
-
-                /*
-                 * Don't send twice if button is inside
-                 * a form or special action.
-                 */
-
-                event.preventDefault();
-
-
-                processMessage(message);
+                stepCount.classList.add("done");
 
             }
-        );
 
-    }
-
-
-
-    /* =====================================================
-       SEND USER MESSAGE
-    ===================================================== */
-
-    function sendUserMessage() {
-
-        const input =
-            get(".nisha-input");
-
-
-        if (!input) {
 
             return;
 
         }
 
 
-        const text =
-            input.value.trim();
+        if (stepCount) {
+
+            stepCount.classList.remove("done");
+
+        }
 
 
-        if (!text) {
+        if (stepNumber) {
+
+            stepNumber.textContent = step;
+
+        }
+
+
+        progress.style.width =
+            ((step / 3) * 100) + "%";
+
+    }
+
+
+    /* =====================================================
+       SHOW STEP
+    ===================================================== */
+
+    function showStep(step) {
+
+        const body = get("#nisha-body");
+
+        const typing = get(".nisha-typing");
+
+
+        currentStep = step;
+
+
+        getAll(".nisha-step").forEach(function (item) {
+
+            item.classList.remove("active");
+
+        });
+
+
+        /* RESULT STEP */
+
+        if (step === 4) {
+
+            if (typing) {
+
+                typing.classList.add("show");
+
+            }
+
+
+            setTimeout(function () {
+
+                if (typing) {
+
+                    typing.classList.remove("show");
+
+                }
+
+
+                const resultStep =
+                    get('.nisha-step[data-step="4"]');
+
+
+                if (resultStep) {
+
+                    resultStep.classList.add("active");
+
+                }
+
+
+                buildRecommendation();
+
+                updateProgress(4);
+
+
+                if (body) {
+
+                    body.scrollTop = 0;
+
+                }
+
+            }, 600);
+
 
             return;
 
         }
 
 
-        input.value = "";
+        /* NORMAL STEP */
 
-
-        processMessage(text);
-
-    }
-
-
-
-    /* =====================================================
-       PROCESS MESSAGE
-    ===================================================== */
-
-    function processMessage(text) {
-
-        openNisha();
-
-
-        addUserMessage(text);
-
-
-        showTyping();
-
-
-        const delay =
-            Math.min(
-                650 + text.length * 8,
-                1300
+        const nextStep =
+            get(
+                '.nisha-step[data-step="' +
+                step +
+                '"]'
             );
 
 
-        setTimeout(
-            function () {
+        if (nextStep) {
 
-                removeTyping();
-
-                generateResponse(text);
-
-            },
-            delay
-        );
-
-    }
-
-
-
-    /* =====================================================
-       RESPONSE ENGINE
-    ===================================================== */
-
-    function generateResponse(text) {
-
-        const message =
-            text.toLowerCase().trim();
-
-
-        /*
-         * GREETING
-         */
-
-        if (
-            isGreeting(message)
-        ) {
-
-            respondGreeting();
-
-            return;
+            nextStep.classList.add("active");
 
         }
 
 
-        /*
-         * THANK YOU
-         */
+        updateProgress(step);
 
-        if (
-            containsAny(
-                message,
-                [
-                    "thank you",
-                    "thanks",
-                    "thank",
-                    "great",
-                    "nice"
-                ]
-            )
-        ) {
 
-            botMessage(
-                `
-                You're welcome! 😊
+        if (body) {
 
-                <br><br>
+            body.scrollTop = 0;
 
-                If you'd like, tell me a little
-                about your business and I'll help
-                you figure out the right digital
-                growth direction.
-                `
+        }
+
+    }
+
+
+    /* =====================================================
+       SELECT OPTION
+    ===================================================== */
+
+    function selectOption(button, type) {
+
+        const value =
+            button.getAttribute(
+                "data-" + type
             );
 
-            return;
 
-        }
-
-
-        /*
-         * BUSINESS TYPE DETECTION
-         */
-
-        const detectedBusiness =
-            detectBusiness(message);
+        if (!value) return;
 
 
-        if (detectedBusiness) {
+        /* REMOVE OLD SELECTION */
 
-            state.business =
-                detectedBusiness;
+        getAll(
+            "[data-" + type + "]"
+        ).forEach(function (item) {
 
-        }
+            item.classList.remove("selected");
 
-
-        /*
-         * GOAL DETECTION
-         */
-
-        const detectedGoal =
-            detectGoal(message);
+        });
 
 
-        if (detectedGoal) {
+        /* ADD NEW SELECTION */
 
-            state.goal =
-                detectedGoal;
-
-        }
+        button.classList.add("selected");
 
 
-        /*
-         * CHALLENGE DETECTION
-         */
+        /* SAVE ANSWER */
 
-        const detectedChallenge =
-            detectChallenge(message);
+        answers[type] = value;
 
 
-        if (detectedChallenge) {
+        /* MOVE TO NEXT STEP */
 
-            state.challenge =
-                detectedChallenge;
+        setTimeout(function () {
 
-        }
-
-
-        /*
-         * SERVICE DETECTION
-         */
-
-        const detectedService =
-            detectService(message);
-
-
-        if (detectedService) {
-
-            state.service =
-                detectedService;
-
-        }
-
-
-        /*
-         * PORTFOLIO
-         */
-
-        if (
-            containsAny(
-                message,
-                [
-                    "portfolio",
-                    "projects",
-                    "project",
-                    "work",
-                    "clients",
-                    "previous work",
-                    "examples"
-                ]
-            )
-        ) {
-
-            respondPortfolio();
-
-            return;
-
-        }
-
-
-        /*
-         * CONTACT
-         */
-
-        if (
-            containsAny(
-                message,
-                [
-                    "contact",
-                    "phone number",
-                    "mobile number",
-                    "email",
-                    "call you",
-                    "talk to team"
-                ]
-            )
-        ) {
-
-            respondContact();
-
-            return;
-
-        }
-
-
-        /*
-         * PRICING
-         */
-
-        if (
-            containsAny(
-                message,
-                [
-                    "price",
-                    "pricing",
-                    "cost",
-                    "budget",
-                    "package",
-                    "packages",
-                    "how much",
-                    "quote"
-                ]
-            )
-        ) {
-
-            respondPricing();
-
-            return;
-
-        }
-
-
-        /*
-         * SERVICE DIRECT QUESTION
-         */
-
-        if (detectedService) {
-
-            respondService(
-                detectedService
+            showStep(
+                currentStep + 1
             );
 
-            return;
-
-        }
-
-
-        /*
-         * IF BUSINESS + GOAL ARE AVAILABLE
-         */
-
-        if (
-            state.business &&
-            state.goal
-        ) {
-
-            giveRecommendation();
-
-            return;
-
-        }
-
-
-        /*
-         * IF ONLY GOAL AVAILABLE
-         */
-
-        if (
-            state.goal &&
-            !state.business
-        ) {
-
-            askBusinessType();
-
-            return;
-
-        }
-
-
-        /*
-         * IF ONLY BUSINESS AVAILABLE
-         */
-
-        if (
-            state.business &&
-            !state.goal
-        ) {
-
-            askBusinessGoal();
-
-            return;
-
-        }
-
-
-        /*
-         * CHALLENGE ONLY
-         */
-
-        if (
-            state.challenge &&
-            !state.business
-        ) {
-
-            botMessage(
-                `
-                I can definitely help with that.
-
-                <br><br>
-
-                Before I suggest the right solution,
-                what type of business do you run?
-
-                <br><br>
-
-                For example:
-
-                <br>
-
-                Restaurant • School • Furniture •
-                Events • Real Estate • Gym •
-                Retail • Service Business
-                `
-            );
-
-            state.askedBusiness =
-                true;
-
-            return;
-
-        }
-
-
-        /*
-         * UNKNOWN / GENERAL MESSAGE
-         */
-
-        handleGeneralMessage(message);
+        }, 280);
 
     }
-
-
-
-    /* =====================================================
-       GREETING RESPONSE
-    ===================================================== */
-
-    function respondGreeting() {
-
-        botMessage(
-            `
-            Hi! 👋 I'm <strong>Nisha</strong>.
-
-            <br><br>
-
-            I don't want to simply show you a
-            list of services. I'd first like to
-            understand your business.
-
-            <br><br>
-
-            <strong>What type of business do you run?</strong>
-
-            <br><br>
-
-            You can simply type something like:
-
-            <br>
-
-            “I run a furniture store”
-            `
-        );
-
-
-        state.askedBusiness =
-            true;
-
-    }
-
-
-
-    /* =====================================================
-       BUSINESS QUESTION
-    ===================================================== */
-
-    function askBusinessType() {
-
-        if (state.askedBusiness) {
-
-            return;
-
-        }
-
-
-        botMessage(
-            `
-            Great. 👍
-
-            <br><br>
-
-            To guide you properly,
-            <strong>what type of business do you run?</strong>
-
-            <br><br>
-
-            For example:
-
-            <br>
-
-            Restaurant • School • Furniture •
-            Events • Real Estate • Gym •
-            Retail • Service Business
-            `
-        );
-
-
-        state.askedBusiness =
-            true;
-
-    }
-
-
-
-    /* =====================================================
-       GOAL QUESTION
-    ===================================================== */
-
-    function askBusinessGoal() {
-
-        if (state.askedGoal) {
-
-            return;
-
-        }
-
-
-        botMessage(
-            `
-            Got it — <strong>${escapeHTML(
-                state.business
-            )}</strong>. 👍
-
-            <br><br>
-
-            What are you mainly trying to achieve
-            right now?
-
-            <br><br>
-
-            <strong>More customers?</strong><br>
-
-            <strong>More leads?</strong><br>
-
-            <strong>Better branding?</strong><br>
-
-            <strong>More visibility online?</strong><br>
-
-            <strong>Website?</strong>
-
-            <br><br>
-
-            Just tell me in your own words.
-            `
-        );
-
-
-        state.askedGoal =
-            true;
-
-    }
-
-
-
-    /* =====================================================
-       RECOMMENDATION
-    ===================================================== */
-
-    function giveRecommendation() {
-
-        if (
-            state.recommendationGiven
-        ) {
-
-            /*
-             * If recommendation was already given,
-             * answer with a more direct CTA.
-             */
-
-            botMessage(
-                `
-                Based on what you've told me,
-                I can help you take this forward.
-
-                <br><br>
-
-                Would you like to discuss the
-                requirement with our team?
-                `
-                + quoteButton()
-            );
-
-            return;
-
-        }
-
-
-        const recommendation =
-            buildRecommendation();
-
-
-        state.recommendationGiven =
-            true;
-
-
-        botMessage(
-            `
-            Thanks — that gives me a much
-            clearer picture. 👍
-
-            <br><br>
-
-            <strong>Business:</strong>
-            ${escapeHTML(state.business)}
-
-            <br>
-
-            <strong>Goal:</strong>
-            ${escapeHTML(state.goal)}
-
-            <br><br>
-
-            Based on that, I'd recommend:
-
-            <br><br>
-
-            ${recommendation}
-
-            <br><br>
-
-            We can build this around your
-            actual business goals rather than
-            using a one-size-fits-all package.
-
-            <br><br>
-
-            Would you like to discuss your
-            requirement with our team?
-
-            ${quoteButton()}
-            `
-        );
-
-    }
-
 
 
     /* =====================================================
@@ -1085,1572 +452,88 @@
 
     function buildRecommendation() {
 
-        const goal =
-            state.goal.toLowerCase();
+        const resultServices =
+            get("#nisha-services-result");
+
+        const resultSummary =
+            get("#nisha-result-summary");
 
 
-        /*
-         * LEADS / ENQUIRIES
-         */
+        if (!resultServices) return;
 
-        if (
-            containsAny(
-                goal,
-                [
-                    "lead",
-                    "enquir",
-                    "customer",
-                    "sales",
-                    "sale"
-                ]
-            )
-        ) {
 
-            return `
-                <strong>Performance Marketing</strong>
+        const selectedServices =
+            recommendations[answers.goal] ||
+            recommendations[
+                "Build Online Presence"
+            ];
 
-                <br><br>
 
-                • Meta Ads<br>
-                • Google Ads<br>
-                • Landing / Website Optimization<br>
-                • Lead Generation Strategy<br>
-                • Conversion-focused content
-            `;
+        /* SUMMARY */
+
+        if (resultSummary) {
+
+            resultSummary.textContent =
+                "Based on your " +
+                (answers.business || "business") +
+                " and goal of " +
+                (answers.goal || "digital growth") +
+                ", these services would be a strong starting point for you.";
 
         }
 
 
-        /*
-         * BRANDING
-         */
+        /* CLEAR OLD RESULTS */
 
-        if (
-            containsAny(
-                goal,
-                [
-                    "brand",
-                    "branding",
-                    "identity",
-                    "professional"
-                ]
-            )
-        ) {
+        resultServices.innerHTML = "";
 
-            return `
-                <strong>Brand Building</strong>
 
-                <br><br>
+        /* CREATE RESULTS */
 
-                • Brand Strategy<br>
-                • Visual Identity<br>
-                • Graphic Design<br>
-                • Social Media Presence<br>
-                • Website Experience
-            `;
+        selectedServices.forEach(
+            function (service, index) {
 
-        }
+                const item =
+                    document.createElement("div");
 
 
-        /*
-         * VISIBILITY / GOOGLE
-         */
+                item.className =
+                    "nisha-service-result";
 
-        if (
-            containsAny(
-                goal,
-                [
-                    "visibility",
-                    "google",
-                    "search",
-                    "ranking",
-                    "seo",
-                    "online presence"
-                ]
-            )
-        ) {
 
-            return `
-                <strong>Digital Visibility</strong>
+                item.innerHTML = `
 
-                <br><br>
+                    <span class="nisha-service-number">
 
-                • SEO<br>
-                • Google Business Presence<br>
-                • Website Optimization<br>
-                • Local Search Strategy<br>
-                • Content & Social Media
-            `;
+                        0${index + 1}
 
-        }
+                    </span>
 
 
-        /*
-         * WEBSITE
-         */
+                    <span class="nisha-service-icon">
 
-        if (
-            containsAny(
-                goal,
-                [
-                    "website",
-                    "web",
-                    "site"
-                ]
-            )
-        ) {
+                        <i class="fas ${service.icon}"></i>
 
-            return `
-                <strong>Website & Digital Foundation</strong>
+                    </span>
 
-                <br><br>
 
-                • Professional Website<br>
-                • Mobile-first Design<br>
-                • SEO-ready Structure<br>
-                • Conversion-focused Pages<br>
-                • Analytics & Optimization
-            `;
+                    <div>
 
-        }
+                        <strong>
+                            ${service.title}
+                        </strong>
 
-
-        /*
-         * SOCIAL MEDIA
-         */
-
-        if (
-            containsAny(
-                goal,
-                [
-                    "social",
-                    "instagram",
-                    "facebook",
-                    "content"
-                ]
-            )
-        ) {
-
-            return `
-                <strong>Social Media Growth</strong>
-
-                <br><br>
-
-                • Social Media Strategy<br>
-                • Content Creation<br>
-                • Instagram Growth<br>
-                • Meta Ads<br>
-                • Audience Engagement
-            `;
-
-        }
-
-
-        /*
-         * DEFAULT
-         */
-
-        return `
-            <strong>Complete Digital Growth Strategy</strong>
-
-            <br><br>
-
-            • Strategy & Branding<br>
-            • Website Development<br>
-            • SEO<br>
-            • Social Media Marketing<br>
-            • Meta & Google Ads<br>
-            • Content & Creative
-        `;
-
-    }
-
-
-
-    /* =====================================================
-       SERVICE RESPONSE
-    ===================================================== */
-
-    function respondService(service) {
-
-        const serviceData = {
-
-            seo: {
-                title: "SEO",
-                text: `
-                    We help businesses improve their
-                    search visibility through SEO,
-                    content strategy and local search
-                    optimization.
-                `
-            },
-
-            meta: {
-                title: "Meta Ads",
-                text: `
-                    We create and manage Meta campaigns
-                    designed to reach the right audience,
-                    generate enquiries and support business
-                    growth.
-                `
-            },
-
-            google: {
-                title: "Google Ads",
-                text: `
-                    Google Ads can help businesses reach
-                    people who are actively searching for
-                    their products or services.
-                `
-            },
-
-            website: {
-                title: "Website Development",
-                text: `
-                    We build modern, responsive and
-                    conversion-focused websites that
-                    support your brand and digital growth.
-                `
-            },
-
-            social: {
-                title: "Social Media Marketing",
-                text: `
-                    We help businesses build a consistent
-                    social presence through strategy,
-                    content, creatives and audience growth.
-                `
-            },
-
-            branding: {
-                title: "Branding & Design",
-                text: `
-                    We create stronger visual identities
-                    and brand experiences that help businesses
-                    look professional and memorable.
-                `
-            },
-
-            digital: {
-                title: "Digital Marketing",
-                text: `
-                    We combine strategy, social media,
-                    advertising, SEO, websites and creative
-                    solutions based on your business goals.
-                `
-            }
-
-        };
-
-
-        const data =
-            serviceData[service] ||
-            serviceData.digital;
-
-
-        botMessage(
-            `
-            <strong>${data.title}</strong>
-
-            <br><br>
-
-            ${data.text}
-
-            <br><br>
-
-            Instead of recommending a package immediately,
-            I can understand your business first and
-            suggest what would actually make sense.
-
-            <br><br>
-
-            <strong>
-                What type of business do you run?
-            </strong>
-            `
-        );
-
-
-        state.service =
-            service;
-
-
-        state.askedBusiness =
-            true;
-
-    }
-
-
-
-    /* =====================================================
-       PORTFOLIO
-    ===================================================== */
-
-    function respondPortfolio() {
-
-        botMessage(
-            `
-            Absolutely. 📁
-
-            <br><br>
-
-            You can explore some of the brands and
-            businesses we've worked with in our portfolio.
-
-            <br><br>
-
-            <a
-                href="${CONFIG.portfolioPage}"
-                class="nisha-inline-link">
-
-                View Our Portfolio →
-            </a>
-
-            <br><br>
-
-            If you tell me your industry,
-            I can also help you understand which
-            type of digital solution may fit your business.
-            `
-        );
-
-    }
-
-
-
-    /* =====================================================
-       CONTACT
-    ===================================================== */
-
-    function respondContact() {
-
-        botMessage(
-            `
-            Of course. 👋
-
-            <br><br>
-
-            <strong>CGD Media</strong>
-
-            <br><br>
-
-            📞 <strong>+91 75697 98676</strong>
-
-            <br><br>
-
-            📧 <strong>${CONFIG.email}</strong>
-
-            <br><br>
-
-            You can also send your requirement
-            directly through WhatsApp.
-
-            <br><br>
-
-            ${whatsappButton()}
-            `
-        );
-
-    }
-
-
-
-    /* =====================================================
-       PRICING
-    ===================================================== */
-
-    function respondPricing() {
-
-        botMessage(
-            `
-            Our pricing depends on what your business
-            actually needs — for example, a website,
-            social media, SEO, ads or a complete
-            digital growth strategy.
-
-            <br><br>
-
-            I don't want to give you a random price
-            without understanding the requirement.
-
-            <br><br>
-
-            <strong>
-                Tell me your business type and what
-                you're looking to achieve.
-            </strong>
-
-            <br><br>
-
-            ${quoteButton()}
-            `
-        );
-
-    }
-
-
-
-    /* =====================================================
-       GENERAL MESSAGE
-    ===================================================== */
-
-    function handleGeneralMessage(message) {
-
-        /*
-         * Short generic messages
-         */
-
-        if (
-            message.length < 5
-        ) {
-
-            botMessage(
-                `
-                Sure. 😊
-
-                Tell me a little more about
-                what you're looking for.
-                `
-            );
-
-            return;
-
-        }
-
-
-        /*
-         * Business-looking sentence
-         */
-
-        if (
-            !state.business
-        ) {
-
-            botMessage(
-                `
-                I can help with that. 👍
-
-                <br><br>
-
-                Before I suggest anything,
-                <strong>what type of business do you run?</strong>
-
-                <br><br>
-
-                For example:
-
-                <br>
-
-                “I run a furniture store”
-                `
-            );
-
-
-            state.askedBusiness =
-                true;
-
-
-            return;
-
-        }
-
-
-        /*
-         * Business exists but goal doesn't
-         */
-
-        if (
-            state.business &&
-            !state.goal
-        ) {
-
-            askBusinessGoal();
-
-            return;
-
-        }
-
-
-        /*
-         * Fallback
-         */
-
-        botMessage(
-            `
-            I understand.
-
-            <br><br>
-
-            Let me help you narrow it down.
-
-            <br><br>
-
-            Are you mainly looking for:
-
-            <br>
-
-            <strong>More customers</strong>,
-            <strong>better branding</strong>,
-            <strong>a website</strong>,
-            <strong>SEO / Google visibility</strong>,
-            or <strong>social media growth</strong>?
-
-            <br><br>
-
-            Just type what you're trying to achieve.
-            `
-        );
-
-    }
-
-
-
-    /* =====================================================
-       DETECT BUSINESS
-    ===================================================== */
-
-    function detectBusiness(text) {
-
-        const businesses = [
-
-            {
-                words: [
-                    "restaurant",
-                    "hotel",
-                    "cafe",
-                    "café",
-                    "food",
-                    "bakery",
-                    "bar",
-                    "pub"
-                ],
-                value: "Food / Hospitality Business"
-            },
-
-            {
-                words: [
-                    "school",
-                    "college",
-                    "institute",
-                    "institution",
-                    "education",
-                    "academy"
-                ],
-                value: "Education Business"
-            },
-
-            {
-                words: [
-                    "hospital",
-                    "clinic",
-                    "doctor",
-                    "healthcare",
-                    "medical"
-                ],
-                value: "Healthcare Business"
-            },
-
-            {
-                words: [
-                    "real estate",
-                    "property",
-                    "builder",
-                    "construction",
-                    "apartment"
-                ],
-                value: "Real Estate / Construction Business"
-            },
-
-            {
-                words: [
-                    "furniture",
-                    "interior",
-                    "interiors",
-                    "home decor",
-                    "home décor"
-                ],
-                value: "Furniture / Interior Business"
-            },
-
-            {
-                words: [
-                    "event",
-                    "events",
-                    "wedding",
-                    "decorations",
-                    "decoration"
-                ],
-                value: "Events Business"
-            },
-
-            {
-                words: [
-                    "gym",
-                    "fitness",
-                    "workout"
-                ],
-                value: "Fitness Business"
-            },
-
-            {
-                words: [
-                    "boutique",
-                    "fashion",
-                    "clothing",
-                    "garments"
-                ],
-                value: "Fashion / Retail Business"
-            },
-
-            {
-                words: [
-                    "car",
-                    "automobile",
-                    "auto",
-                    "detailing",
-                    "car wash"
-                ],
-                value: "Automotive Business"
-            },
-
-            {
-                words: [
-                    "shop",
-                    "store",
-                    "retail"
-                ],
-                value: "Retail Business"
-            }
-
-        ];
-
-
-        for (
-            let i = 0;
-            i < businesses.length;
-            i++
-        ) {
-
-            if (
-                containsAny(
-                    text,
-                    businesses[i].words
-                )
-            ) {
-
-                return businesses[i].value;
-
-            }
-
-        }
-
-
-        return "";
-
-    }
-
-
-
-    /* =====================================================
-       DETECT GOAL
-    ===================================================== */
-
-    function detectGoal(text) {
-
-        if (
-            containsAny(
-                text,
-                [
-                    "more leads",
-                    "leads",
-                    "enquiries",
-                    "enquiry",
-                    "inquiries",
-                    "inquiry",
-                    "customers",
-                    "sales",
-                    "sell more",
-                    "more sales"
-                ]
-            )
-        ) {
-
-            return "Generate more leads and customers";
-
-        }
-
-
-        if (
-            containsAny(
-                text,
-                [
-                    "branding",
-                    "brand",
-                    "rebrand",
-                    "identity"
-                ]
-            )
-        ) {
-
-            return "Build a stronger brand";
-
-        }
-
-
-        if (
-            containsAny(
-                text,
-                [
-                    "website",
-                    "web site",
-                    "web development",
-                    "new website"
-                ]
-            )
-        ) {
-
-            return "Build or improve a website";
-
-        }
-
-
-        if (
-            containsAny(
-                text,
-                [
-                    "seo",
-                    "google ranking",
-                    "rank on google",
-                    "visibility",
-                    "search"
-                ]
-            )
-        ) {
-
-            return "Improve online visibility";
-
-        }
-
-
-        if (
-            containsAny(
-                text,
-                [
-                    "instagram",
-                    "facebook",
-                    "social media",
-                    "social"
-                ]
-            )
-        ) {
-
-            return "Grow social media presence";
-
-        }
-
-
-        if (
-            containsAny(
-                text,
-                [
-                    "grow",
-                    "growth",
-                    "grow my business",
-                    "business growth"
-                ]
-            )
-        ) {
-
-            return "Grow the business digitally";
-
-        }
-
-
-        if (
-            containsAny(
-                text,
-                [
-                    "online presence",
-                    "digital presence",
-                    "digital marketing"
-                ]
-            )
-        ) {
-
-            return "Build a stronger digital presence";
-
-        }
-
-
-        return "";
-
-    }
-
-
-
-    /* =====================================================
-       DETECT CHALLENGE
-    ===================================================== */
-
-    function detectChallenge(text) {
-
-        if (
-            containsAny(
-                text,
-                [
-                    "no customers",
-                    "low sales",
-                    "not getting customers",
-                    "not getting leads",
-                    "no leads"
-                ]
-            )
-        ) {
-
-            return "Low leads or sales";
-
-        }
-
-
-        if (
-            containsAny(
-                text,
-                [
-                    "no website",
-                    "don't have website",
-                    "dont have website"
-                ]
-            )
-        ) {
-
-            return "No professional website";
-
-        }
-
-
-        if (
-            containsAny(
-                text,
-                [
-                    "not ranking",
-                    "google ranking",
-                    "not visible",
-                    "low visibility"
-                ]
-            )
-        ) {
-
-            return "Low online visibility";
-
-        }
-
-
-        if (
-            containsAny(
-                text,
-                [
-                    "followers",
-                    "engagement",
-                    "social media"
-                ]
-            )
-        ) {
-
-            return "Weak social media presence";
-
-        }
-
-
-        return "";
-
-    }
-
-
-
-    /* =====================================================
-       DETECT SERVICE
-    ===================================================== */
-
-    function detectService(text) {
-
-        if (
-            containsAny(
-                text,
-                [
-                    "meta ads",
-                    "facebook ads",
-                    "instagram ads"
-                ]
-            )
-        ) {
-
-            return "meta";
-
-        }
-
-
-        if (
-            containsAny(
-                text,
-                [
-                    "google ads",
-                    "google advertisement",
-                    "ppc"
-                ]
-            )
-        ) {
-
-            return "google";
-
-        }
-
-
-        if (
-            containsAny(
-                text,
-                [
-                    "seo",
-                    "search engine optimization"
-                ]
-            )
-        ) {
-
-            return "seo";
-
-        }
-
-
-        if (
-            containsAny(
-                text,
-                [
-                    "website",
-                    "web development",
-                    "web design"
-                ]
-            )
-        ) {
-
-            return "website";
-
-        }
-
-
-        if (
-            containsAny(
-                text,
-                [
-                    "social media",
-                    "instagram marketing",
-                    "facebook marketing"
-                ]
-            )
-        ) {
-
-            return "social";
-
-        }
-
-
-        if (
-            containsAny(
-                text,
-                [
-                    "branding",
-                    "graphic design",
-                    "brand identity"
-                ]
-            )
-        ) {
-
-            return "branding";
-
-        }
-
-
-        if (
-            containsAny(
-                text,
-                [
-                    "digital marketing"
-                ]
-            )
-        ) {
-
-            return "digital";
-
-        }
-
-
-        return "";
-
-    }
-
-
-
-    /* =====================================================
-       GREETING DETECTOR
-    ===================================================== */
-
-    function isGreeting(text) {
-
-        return containsAny(
-            text,
-            [
-                "hi",
-                "hello",
-                "hey",
-                "hii",
-                "hiii",
-                "good morning",
-                "good evening",
-                "good afternoon"
-            ]
-        );
-
-    }
-
-
-
-    /* =====================================================
-       STRING MATCH HELPER
-    ===================================================== */
-
-    function containsAny(
-        text,
-        words
-    ) {
-
-        return words.some(
-            function (word) {
-
-                return text.includes(
-                    word
-                );
-
-            }
-        );
-
-    }
-
-
-
-    /* =====================================================
-       ADD BOT MESSAGE
-    ===================================================== */
-
-    function botMessage(html) {
-
-        const body =
-            get(".nisha-body");
-
-
-        if (!body) {
-
-            return;
-
-        }
-
-
-        const typingElement =
-            body.querySelector(
-                ".nisha-typing-message"
-            );
-
-
-        const message =
-            document.createElement(
-                "div"
-            );
-
-
-        message.className =
-            "nisha-message bot";
-
-
-        message.innerHTML = `
-
-            <div class="nisha-bubble">
-
-                ${html}
-
-            </div>
-
-        `;
-
-
-        /*
-         * Insert before typing if it exists
-         */
-
-        if (typingElement) {
-
-            body.insertBefore(
-                message,
-                typingElement
-            );
-
-        } else {
-
-            body.appendChild(
-                message
-            );
-
-        }
-
-
-        scrollToBottom();
-
-    }
-
-
-
-    /* =====================================================
-       ADD USER MESSAGE
-    ===================================================== */
-
-    function addUserMessage(text) {
-
-        const body =
-            get(".nisha-body");
-
-
-        if (!body) {
-
-            return;
-
-        }
-
-
-        const message =
-            document.createElement(
-                "div"
-            );
-
-
-        message.className =
-            "nisha-message user";
-
-
-        message.innerHTML = `
-
-            <div class="nisha-bubble">
-
-                ${escapeHTML(text)}
-
-            </div>
-
-        `;
-
-
-        body.appendChild(
-            message
-        );
-
-
-        scrollToBottom();
-
-    }
-
-
-
-    /* =====================================================
-       TYPING
-    ===================================================== */
-
-    function showTyping() {
-
-        const body =
-            get(".nisha-body");
-
-
-        if (!body) {
-
-            return;
-
-        }
-
-
-        removeTyping();
-
-
-        const typing =
-            document.createElement(
-                "div"
-            );
-
-
-        typing.id =
-            "nishaTyping";
-
-
-        typing.className =
-            "nisha-message bot nisha-typing-message";
-
-
-        typing.innerHTML = `
-
-            <div class="nisha-bubble">
-
-                <div class="nisha-typing">
-
-                    <span></span>
-                    <span></span>
-                    <span></span>
-
-                </div>
-
-            </div>
-
-        `;
-
-
-        body.appendChild(
-            typing
-        );
-
-
-        scrollToBottom();
-
-    }
-
-
-
-    /* =====================================================
-       REMOVE TYPING
-    ===================================================== */
-
-    function removeTyping() {
-
-        const typing =
-            document.getElementById(
-                "nishaTyping"
-            );
-
-
-        if (typing) {
-
-            typing.remove();
-
-        }
-
-    }
-
-
-
-    /* =====================================================
-       SCROLL
-    ===================================================== */
-
-    function scrollToBottom() {
-
-        const body =
-            get(".nisha-body");
-
-
-        if (!body) {
-
-            return;
-
-        }
-
-
-        setTimeout(
-            function () {
-
-                body.scrollTop =
-                    body.scrollHeight;
-
-            },
-            50
-        );
-
-    }
-
-
-
-    /* =====================================================
-       QUOTE BUTTON
-    ===================================================== */
-
-    function quoteButton() {
-
-        return `
-
-            <button
-                type="button"
-                class="nisha-quick-btn nisha-action-quote"
-                data-nisha-quote="true">
-
-                🚀 Discuss My Requirement
-
-            </button>
-
-        `;
-
-    }
-
-
-
-    /* =====================================================
-       WHATSAPP BUTTON
-    ===================================================== */
-
-    function whatsappButton() {
-
-        const url =
-            `https://wa.me/${CONFIG.whatsapp}`;
-
-
-        return `
-
-            <a
-                href="${url}"
-                class="nisha-inline-whatsapp"
-                target="_blank"
-                rel="noopener noreferrer">
-
-                <i class="fab fa-whatsapp"></i>
-
-                Chat on WhatsApp →
-
-            </a>
-
-        `;
-
-    }
-
-
-
-    /* =====================================================
-       QUOTE BUTTON LISTENER
-    ===================================================== */
-
-    document.addEventListener(
-        "click",
-        function (event) {
-
-            const button =
-                event.target.closest(
-                    "[data-nisha-quote]"
-                );
-
-
-            if (!button) {
-
-                return;
-
-            }
-
-
-            event.preventDefault();
-
-
-            showLeadForm();
-
-        }
-    );
-
-
-
-    /* =====================================================
-       LEAD FORM
-    ===================================================== */
-
-    function showLeadForm() {
-
-        if (
-            document.querySelector(
-                ".nisha-lead-form"
-            )
-        ) {
-
-            return;
-
-        }
-
-
-        state.leadStarted =
-            true;
-
-
-        const body =
-            get(".nisha-body");
-
-
-        if (!body) {
-
-            return;
-
-        }
-
-
-        const message =
-            document.createElement(
-                "div"
-            );
-
-
-        message.className =
-            "nisha-message bot";
-
-
-        message.innerHTML = `
-
-            <div class="nisha-bubble">
-
-                <strong>
-                    Let's take the next step. 🚀
-                </strong>
-
-                <br><br>
-
-                Give me a few details and
-                I'll prepare a WhatsApp message
-                for our team.
-
-                <form
-                    class="nisha-lead-form">
-
-                    <input
-                        type="text"
-                        name="name"
-                        placeholder="Your name"
-                        autocomplete="name"
-                        required
-                    >
-
-                    <input
-                        type="tel"
-                        name="phone"
-                        placeholder="Phone number"
-                        autocomplete="tel"
-                        required
-                    >
-
-                    <input
-                        type="text"
-                        name="business"
-                        placeholder="Business name"
-                        autocomplete="organization"
-                        required
-                    >
-
-                    <textarea
-                        name="requirement"
-                        placeholder="Tell us what you need..."
-                        rows="3"
-                        required
-                    ></textarea>
-
-                    <button
-                        type="submit"
-                        class="nisha-lead-submit">
-
-                        Continue to WhatsApp
-                        <i class="fab fa-whatsapp"></i>
-
-                    </button>
-
-                </form>
-
-            </div>
-
-        `;
-
-
-        body.appendChild(
-            message
-        );
-
-
-        scrollToBottom();
-
-
-        const form =
-            message.querySelector(
-                ".nisha-lead-form"
-            );
-
-
-        form.addEventListener(
-            "submit",
-            function (event) {
-
-                event.preventDefault();
-
-
-                const formData =
-                    new FormData(form);
-
-
-                const name =
-                    formData.get(
-                        "name"
-                    ).trim();
-
-
-                const phone =
-                    formData.get(
-                        "phone"
-                    ).trim();
-
-
-                const business =
-                    formData.get(
-                        "business"
-                    ).trim();
-
-
-                const requirement =
-                    formData.get(
-                        "requirement"
-                    ).trim();
-
-
-                const whatsappMessage =
-
-                    `Hi CGD Media 👋
-
-I spoke with Nisha on your website.
-
-Name: ${name}
-Phone: ${phone}
-Business: ${business}
-Requirement: ${requirement}`;
-
-
-                const url =
-
-                    `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(
-                        whatsappMessage
-                    )}`;
-
-
-                form.innerHTML = `
-
-                    <div class="nisha-form-success">
-
-                        <i class="fab fa-whatsapp"></i>
-
-                        Opening WhatsApp...
+                        <p>
+                            ${service.description}
+                        </p>
 
                     </div>
 
                 `;
 
 
-                setTimeout(
-                    function () {
-
-                        window.open(
-                            url,
-                            "_blank",
-                            "noopener,noreferrer"
-                        );
-
-                    },
-                    500
+                resultServices.appendChild(
+                    item
                 );
 
             }
@@ -2659,43 +542,430 @@ Requirement: ${requirement}`;
     }
 
 
-
     /* =====================================================
-       ESCAPE HTML
+       RESTART
     ===================================================== */
 
-    function escapeHTML(text) {
+    function restartNisha() {
 
-        const element =
-            document.createElement(
-                "div"
-            );
+        answers.business = "";
 
+        answers.goal = "";
 
-        element.textContent =
-            text;
+        answers.challenge = "";
 
 
-        return element.innerHTML;
+        getAll(".nisha-option").forEach(
+            function (item) {
+
+                item.classList.remove("selected");
+
+            }
+        );
+
+
+        showStep(1);
 
     }
 
 
+    /* =====================================================
+       SEND CUSTOM MESSAGE
+    ===================================================== */
+
+    function escapeHTML(text) {
+
+        const div =
+            document.createElement("div");
+
+
+        div.textContent = text;
+
+
+        return div.innerHTML;
+
+    }
+
+
+    function sendCustomMessage() {
+
+        const input =
+            get(".nisha-input");
+
+        const body =
+            get("#nisha-body");
+
+        const typing =
+            get(".nisha-typing");
+
+
+        if (!input || !body) return;
+
+
+        const message =
+            input.value.trim();
+
+
+        if (!message) return;
+
+
+        const activeStep =
+            get(".nisha-step.active");
+
+
+        if (!activeStep) return;
+
+
+        /* USER MESSAGE */
+
+        const userMessage =
+            document.createElement("div");
+
+
+        userMessage.className =
+            "nisha-message user";
+
+
+        userMessage.innerHTML = `
+
+            <div class="nisha-user-bubble">
+
+                ${escapeHTML(message)}
+
+            </div>
+
+        `;
+
+
+        activeStep.appendChild(
+            userMessage
+        );
+
+
+        input.value = "";
+
+
+        body.scrollTop =
+            body.scrollHeight;
+
+
+        /* TYPING */
+
+        if (typing) {
+
+            typing.classList.add("show");
+
+        }
+
+
+        setTimeout(function () {
+
+            if (typing) {
+
+                typing.classList.remove("show");
+
+            }
+
+
+            const reply =
+                document.createElement("div");
+
+
+            reply.className =
+                "nisha-message bot nisha-direct-reply";
+
+
+            reply.innerHTML = `
+
+                <div class="nisha-bubble">
+
+                    <div class="nisha-bubble-title">
+
+                        Thanks for sharing
+                        <span>✨</span>
+
+                    </div>
+
+
+                    <p>
+
+                        I understand what you're looking for.
+                        You can continue with the quick questions
+                        above so I can suggest the right CGD Media
+                        services for your business.
+
+                    </p>
+
+                </div>
+
+            `;
+
+
+            activeStep.appendChild(reply);
+
+
+            body.scrollTop =
+                body.scrollHeight;
+
+        }, 600);
+
+    }
+
 
     /* =====================================================
-       DYNAMIC HTML SUPPORT
-       Useful if Nisha HTML is loaded using
-       include.js after DOMContentLoaded.
+       EVENT DELEGATION
+       Works even when HTML is loaded by include.js
+    ===================================================== */
+
+    function setupEvents() {
+
+        if (document.body.dataset.nishaEvents === "true") {
+
+            return;
+
+        }
+
+
+        document.body.dataset.nishaEvents =
+            "true";
+
+
+        document.addEventListener(
+            "click",
+            function (event) {
+
+
+                /* LAUNCHER */
+
+                const launcher =
+                    event.target.closest(
+                        ".nisha-launcher"
+                    );
+
+
+                if (launcher) {
+
+                    const chat =
+                        get(".nisha-chat");
+
+
+                    if (
+                        chat &&
+                        chat.classList.contains(
+                            "active"
+                        )
+                    ) {
+
+                        closeNisha();
+
+                    } else {
+
+                        openNisha();
+
+                    }
+
+
+                    return;
+
+                }
+
+
+                /* CLOSE */
+
+                const close =
+                    event.target.closest(
+                        ".nisha-close"
+                    );
+
+
+                if (close) {
+
+                    closeNisha();
+
+                    return;
+
+                }
+
+
+                /* BUSINESS */
+
+                const business =
+                    event.target.closest(
+                        "[data-business]"
+                    );
+
+
+                if (business) {
+
+                    selectOption(
+                        business,
+                        "business"
+                    );
+
+                    return;
+
+                }
+
+
+                /* GOAL */
+
+                const goal =
+                    event.target.closest(
+                        "[data-goal]"
+                    );
+
+
+                if (goal) {
+
+                    selectOption(
+                        goal,
+                        "goal"
+                    );
+
+                    return;
+
+                }
+
+
+                /* CHALLENGE */
+
+                const challenge =
+                    event.target.closest(
+                        "[data-challenge]"
+                    );
+
+
+                if (challenge) {
+
+                    selectOption(
+                        challenge,
+                        "challenge"
+                    );
+
+                    return;
+
+                }
+
+
+                /* BACK */
+
+                const back =
+                    event.target.closest(
+                        ".nisha-back"
+                    );
+
+
+                if (back) {
+
+                    showStep(
+                        Math.max(
+                            1,
+                            currentStep - 1
+                        )
+                    );
+
+                    return;
+
+                }
+
+
+                /* RESTART */
+
+                const restart =
+                    event.target.closest(
+                        ".nisha-restart"
+                    );
+
+
+                if (restart) {
+
+                    restartNisha();
+
+                    return;
+
+                }
+
+
+                /* SEND */
+
+                const send =
+                    event.target.closest(
+                        ".nisha-send"
+                    );
+
+
+                if (send) {
+
+                    sendCustomMessage();
+
+                }
+
+            }
+        );
+
+
+        /* ENTER KEY */
+
+        document.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (
+                    event.key === "Enter" &&
+                    event.target.matches(
+                        ".nisha-input"
+                    )
+                ) {
+
+                    event.preventDefault();
+
+                    sendCustomMessage();
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       INITIALIZE NISHA
+    ===================================================== */
+
+    function initNisha() {
+
+        if (!nishaExists()) {
+
+            return false;
+
+        }
+
+
+        if (!initialized) {
+
+            setupEvents();
+
+            initialized = true;
+
+        }
+
+
+        showStep(1);
+
+
+        return true;
+
+    }
+
+
+    /* =====================================================
+       WATCH FOR DYNAMIC INCLUDE
     ===================================================== */
 
     function watchForNisha() {
 
-        initNisha();
-
-
-        if (
-            state.initialized
-        ) {
+        if (initNisha()) {
 
             return;
 
@@ -2706,18 +976,7 @@ Requirement: ${requirement}`;
             new MutationObserver(
                 function () {
 
-                    if (
-                        !state.initialized
-                    ) {
-
-                        initNisha();
-
-                    }
-
-
-                    if (
-                        state.initialized
-                    ) {
+                    if (initNisha()) {
 
                         observer.disconnect();
 
@@ -2728,37 +987,14 @@ Requirement: ${requirement}`;
 
 
         observer.observe(
-            document.body,
+            document.documentElement,
             {
                 childList: true,
                 subtree: true
             }
         );
 
-
-        /*
-         * Safety fallback for include.js
-         */
-
-        setTimeout(
-            initNisha,
-            500
-        );
-
-
-        setTimeout(
-            initNisha,
-            1200
-        );
-
-
-        setTimeout(
-            initNisha,
-            2000
-        );
-
     }
-
 
 
     /* =====================================================
@@ -2772,10 +1008,7 @@ Requirement: ${requirement}`;
 
         document.addEventListener(
             "DOMContentLoaded",
-            watchForNisha,
-            {
-                once: true
-            }
+            watchForNisha
         );
 
     } else {
