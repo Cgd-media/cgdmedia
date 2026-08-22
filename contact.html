@@ -12,10 +12,10 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>Contact CGD Media | Digital Marketing Agency</title>
+    <title>Contact CGD Media | Digital Marketing Agency in Mancherial</title>
 
     <meta name="description"
-          content="Contact CGD Media for digital marketing, SEO, social media marketing, Meta Ads, Google Ads, website development, branding, content creation and video editing.">
+          content="Contact CGD Media, a digital marketing agency in Mancherial, for SEO, social media marketing, Meta Ads, Google Ads, website development, branding, content creation and video editing.">
 
     <meta name="author"
           content="CGD Media">
@@ -55,10 +55,10 @@
           content="website">
 
     <meta property="og:title"
-          content="Contact CGD Media | Digital Marketing Agency">
+          content="Contact CGD Media | Digital Marketing Agency in Mancherial">
 
     <meta property="og:description"
-          content="Get in touch with CGD Media for digital marketing, websites, branding, SEO, social media, paid advertising and creative services.">
+          content="Get in touch with CGD Media, a digital marketing agency serving Mancherial, Hyderabad and Telangana for websites, branding, SEO, social media and paid advertising.">
 
     <meta property="og:url"
           content="https://cgdmedia.in/contact.html">
@@ -78,10 +78,10 @@
           content="summary_large_image">
 
     <meta name="twitter:title"
-          content="Contact CGD Media | Digital Marketing Agency">
+          content="Contact CGD Media | Digital Marketing Agency in Mancherial">
 
     <meta name="twitter:description"
-          content="Talk with CGD Media about SEO, social media, paid advertising, website development, branding, content creation and video editing.">
+          content="Talk with CGD Media about SEO, social media, Meta Ads, Google Ads, website development, branding, content creation and video editing.">
 
     <meta name="twitter:image"
           content="https://cgdmedia.in/images/hero-image.png">
@@ -127,12 +127,13 @@
     {
         "@context": "https://schema.org",
         "@graph": [
+
             {
                 "@type": "ContactPage",
                 "@id": "https://cgdmedia.in/contact.html#webpage",
                 "name": "Contact CGD Media",
                 "url": "https://cgdmedia.in/contact.html",
-                "description": "Contact CGD Media to discuss digital marketing, SEO, social media marketing, advertising, website development, branding, content creation and video editing.",
+                "description": "Contact CGD Media to discuss digital marketing, SEO, social media marketing, Meta Ads, Google Ads, website development, branding, content creation and video editing.",
                 "isPartOf": {
                     "@id": "https://cgdmedia.in/#website"
                 },
@@ -140,6 +141,7 @@
                     "@id": "https://cgdmedia.in/#business"
                 }
             },
+
             {
                 "@type": "ProfessionalService",
                 "@id": "https://cgdmedia.in/#business",
@@ -149,8 +151,13 @@
                 "logo": "https://cgdmedia.in/images/logo.png",
                 "telephone": "+917569798676",
                 "email": "clickgrowthdigitalofficial@gmail.com",
-                "description": "CGD Media is a digital marketing agency offering SEO, social media marketing, Meta Ads, Google Ads, website development, branding, content creation and video editing.",
+                "description": "CGD Media is a digital marketing agency in Mancherial offering SEO, social media marketing, Meta Ads, Google Ads, website development, branding, content creation and video editing.",
+
                 "areaServed": [
+                    {
+                        "@type": "City",
+                        "name": "Mancherial"
+                    },
                     {
                         "@type": "City",
                         "name": "Hyderabad"
@@ -160,6 +167,7 @@
                         "name": "Telangana"
                     }
                 ],
+
                 "contactPoint": {
                     "@type": "ContactPoint",
                     "telephone": "+917569798676",
@@ -170,17 +178,20 @@
                         "Telugu"
                     ]
                 },
+
                 "sameAs": [
                     "https://www.instagram.com/cgd_media/?hl=en",
                     "https://www.facebook.com/profile.php?id=61591578308532"
                 ]
             },
+
             {
                 "@type": "WebSite",
                 "@id": "https://cgdmedia.in/#website",
                 "name": "CGD Media",
                 "url": "https://cgdmedia.in/"
             }
+
         ]
     }
     </script>
@@ -273,7 +284,7 @@
                 <p class="contact-intro">
 
                     Have a project in mind or looking for
-                    the right digital marketing partner?
+                    the right digital marketing partner in Mancherial?
                     Send us a message and our team will
                     get back to you.
 
@@ -350,11 +361,11 @@
                     <div>
 
                         <span>
-                            BASED IN
+                            SERVING
                         </span>
 
                         <strong>
-                            Hyderabad, Telangana
+                            Mancherial, Hyderabad & Telangana
                         </strong>
 
                     </div>
@@ -663,7 +674,7 @@
 
 
 <!-- ==========================================
-     COMMON JAVASCRIPT
+     JAVASCRIPT
 ========================================== -->
 
 <script src="js/include.js"></script>
@@ -693,7 +704,6 @@ const formStatus =
     document.getElementById("formStatus");
 
 
-
 /*
 ==================================================
 GOOGLE APPS SCRIPT WEB APP URL
@@ -702,7 +712,6 @@ GOOGLE APPS SCRIPT WEB APP URL
 
 const GOOGLE_SCRIPT_URL =
     "https://script.google.com/macros/s/AKfycby8AsilnIhuhRbt0HzJ8Snh_G-RS7B-HoM3RsGcvR6PQtTt4W98NNETnblt73dKVC7g/exec";
-
 
 
 /*
@@ -717,7 +726,6 @@ contactForm.addEventListener(
 
         event.preventDefault();
 
-
         submitBtn.disabled = true;
 
         submitText.textContent =
@@ -730,10 +738,8 @@ contactForm.addEventListener(
             "";
 
 
-
         const formData =
             new FormData(contactForm);
-
 
 
         const data = {
@@ -764,15 +770,7 @@ contactForm.addEventListener(
         };
 
 
-
         try {
-
-
-            /*
-            ==========================================
-            SEND DATA TO GOOGLE APPS SCRIPT
-            ==========================================
-            */
 
             await fetch(
                 GOOGLE_SCRIPT_URL,
@@ -796,13 +794,6 @@ contactForm.addEventListener(
             );
 
 
-
-            /*
-            ==========================================
-            SUCCESS MESSAGE
-            ==========================================
-            */
-
             formStatus.className =
                 "form-status success";
 
@@ -817,13 +808,6 @@ contactForm.addEventListener(
             contactForm.reset();
 
 
-
-            /*
-            ==========================================
-            WHATSAPP FOLLOW-UP
-            ==========================================
-            */
-
             setTimeout(
                 function() {
 
@@ -837,11 +821,6 @@ contactForm.addEventListener(
             );
 
 
-
-            /*
-            RESET BUTTON
-            */
-
             setTimeout(
                 function() {
 
@@ -852,11 +831,9 @@ contactForm.addEventListener(
                 4000
             );
 
-
         }
 
         catch(error) {
-
 
             console.error(
                 "Contact form error:",
@@ -873,7 +850,6 @@ contactForm.addEventListener(
 
             submitText.textContent =
                 "Send Enquiry";
-
 
         }
 
